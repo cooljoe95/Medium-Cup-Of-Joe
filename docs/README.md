@@ -45,7 +45,7 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 - [ ] Seed users
 
 ### Phase 2: Stories Model, API, and components (3 Days)
-**Objective**: Create a way to 
+**Objective**: Create a way to create a story and see a feed of stories.
 - [ ] Create Header
 - [ ] **`Story`** model
 - [ ] Seed database with a small amount of test data
@@ -60,11 +60,33 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 - [ ] Seed stories
 
 ### Phase 3: Commenting (1 Day)
-**Objective**: 
-- [ ] 
+**Objective**: Create a way to comment on an article and insert to the bottom of the story container
+- [ ] Utilize the response_id of the **`Story`** model to simulate comments
+- [ ] Seed comments
+- [ ] Comments form
+- [ ] Style the comments
+- [ ] Insert the footer in the bottom of the Story container
+  * Display the Similar Stories
 
 ### Phase 4: Follow Users and Like Articles (1 Day)
+**Objective**: Follow and like stories and have them display 
+- [ ] Create **`Follow`** model
+- [ ] Create **`Like`** model
+- [ ] Seed followers
+- [ ] Seed Likes between users and articles/comments
+- [ ] Style and prettify the liking and following
+
 
 ### Phase 5: Rich Text Editing (1 Days)
+**Objective**: Allow the user to style their own work
+- [ ] Integrate react-quill (based on Quill.js).
+- [ ] Rails helpers to sanitize HTML before rendering.
+- [ ] Style Quill components. 
+- [ ] Add Quill styling to seeded stories
 
 ### Phase 6: Infinite Scrolling (1 Day)
+**Objective**: Add infinite scroll to StoryIndex
+- [ ] Paginate Story Index API to send 20 results at a time
+- [ ] Append next set of results when user scrolls and is near bottom
+- [ ] Style scroll components and transitions
+- [ ] Ensure seed data demonstrates infinite scroll
