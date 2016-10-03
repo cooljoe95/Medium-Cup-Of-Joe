@@ -1,6 +1,6 @@
 # Schema Information
 
-## users
+## Users
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -21,7 +21,7 @@ id          | integer   | not null, primary key
 name        | string    | not null, indexed
 story_id    | integer   | not null, indexed, foreign key (references the story that is tagged with this 
 
-## stories
+## Stories
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -34,14 +34,14 @@ response_id     | integer   | indexed, foreign key (references the story that th
    * tags
    * likes
 
-## follows
+## Follows
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 follower_id | integer   | not null, foreign key (references a user), indexed, unique [followed_id]
 followed_id | integer   | not null, foreign key (references a user), indexed
 
-## likes
+## Likes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
