@@ -13,5 +13,4 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 - [ ] Infinite Scroll
 - [ ] Production README sample
 
-## Design Documentation
-[View Wireframs](wireframes/)
+
