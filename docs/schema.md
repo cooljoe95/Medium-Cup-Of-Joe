@@ -25,7 +25,7 @@ story_id    | integer   | not null, indexed, foreign key (references the story t
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-title           | string    | not null
+title           | string    | 
 body            | text      | not null
 author_id       | integer   | not null, foreign key (references the author), indexed
 response_id     | integer   | indexed, foreign key (references the story that this story is in response to) (i.e. Comments)
