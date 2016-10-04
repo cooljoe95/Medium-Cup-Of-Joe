@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as SessionUtils from './util/session_api_util.js';
-
+import * as SessionUtils from './actions/session_actions';
+import configureStore from './store/store';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
     window.SAlogin = SessionUtils.login;
     window.SAlogout = SessionUtils.logout;
     window.SAsignup = SessionUtils.signup;
-    ReactDOM.render(<h1>Medium Cup Of Joe. Does Automatic deployment Work?</h1>, root);
+    window.store = configureStore();
+    ReactDOM.render(<h1>Medium Cup Of Joe.</h1>, root);
 });
 
 window.user = {username: "1", password: "password"};
