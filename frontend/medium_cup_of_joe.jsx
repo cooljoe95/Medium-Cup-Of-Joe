@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.SAlogin = SessionUtils.login;
     window.SAlogout = SessionUtils.logout;
     window.SAsignup = SessionUtils.signup;
-    ReactDOM.render(<h1>Medium Cup Of Joe</h1>, root);
+    ReactDOM.render(<h1>Medium Cup Of Joe. Does Automatic deployment Work?</h1>, root);
 });
 
 window.user = {username: "1", password: "password"};
