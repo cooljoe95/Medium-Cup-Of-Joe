@@ -8,7 +8,7 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 - [ ] Stories
 - [ ] Commenting on stories
 - [ ] Allow users to follow writers and getting a feed
-- [ ] Allow users to like articles 
+- [ ] Allow users to like articles
 - [ ] Rich Text Editing
 - [ ] Infinite Scroll
 - [ ] Production README sample
@@ -30,16 +30,16 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 
 ## Implementation Timeline
 ### Phase 1: Backend Authentication and Front End User Authentication (2 Days)
-**Objective**: Create users and impolent authentication to Medium Cup of Joe
+**Objective**: Create users and implement authentication to Medium Cup of Joe
 - [x] New Rails project
 - [x] **`User`** model/migration
 - [x] Back end authentication (session/password)
 - [x] **`StaticPages`** controller and root view
-- [ ] Webpack & react/redux modules
-- [ ] **`APIUtil`** to interact with the API
-- [ ] Redux cycle for frontend authentication
-- [ ] User signup/signin components
-- [ ] Blank landing component after signup/signin
+- [x] Webpack & react/redux modules
+- [x] **`APIUtil`** to interact with the API
+- [x] Redux cycle for frontend authentication
+- [x] User signup/signin components
+- [x] Blank landing component after signup/signin
 - [ ] Style signup/signin components
 - [ ] Bonus: Auth for Facebook/Twitter/Google Users
 - [x] Seed users
@@ -69,7 +69,7 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
   * Display the Similar Stories
 
 ### Phase 4: Follow Users and Like Articles (1 Day)
-**Objective**: Follow and like stories and have them display 
+**Objective**: Follow and like stories and have them display
 - [ ] Create **`Follow`** model
 - [ ] Create **`Like`** model
 - [ ] Seed followers
@@ -81,7 +81,7 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 **Objective**: Allow the user to style their own work
 - [ ] Integrate react-quill (based on Quill.js).
 - [ ] Rails helpers to sanitize HTML before rendering.
-- [ ] Style Quill components. 
+- [ ] Style Quill components.
 - [ ] Add Quill styling to seeded stories
 
 ### Phase 6: Infinite Scrolling (1 Day)
