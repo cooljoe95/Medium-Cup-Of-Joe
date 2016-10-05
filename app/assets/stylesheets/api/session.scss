@@ -54,7 +54,9 @@ table {
 html {
   height: 100%;
 }
+
 body {
+  letter-spacing: .45px;
   min-height: 100%;
   font: menu;
   background: rgba(100, 100, 100, 0.8);
@@ -66,14 +68,20 @@ body {
   margin: auto;
   background: rgb(255, 255, 255);
   border-radius: 3px;
+  color: rgb(170, 170, 170);
 }
 
 .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
+  // min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  // min-height: 100vh; /* These two lines are counted as one :-)       */
+  //
+  // display: flex;
+  // align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 
-  display: flex;
-  align-items: center;
+  transform: translate(-50%, -50%);
 }
 
 .form-head{
@@ -87,6 +95,36 @@ body {
   border-radius: 3px 3px 0 0;
 }
 .form-element{
-  margin: auto;;
+  margin: auto;
   display: block;
+  border: 0;
+  border-bottom: 1px solid rgb(217, 217, 217);
+  padding-bottom: 7px;
+  padding-left: 8px;
+  width: 87%;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 100;
+  font-family:sans-serif;
+}
+
+input, select, textarea {
+  color: rgb(120,120,120);
+}
+
+.form-element:last-child{
+  border-bottom: 0;
+  padding-top: 25px;
+}
+
+.form-element:focus{
+  outline: none;
+}
+.input-label{
+  display: block;
+  padding-left: 33px;
+  color: rgb(102, 102, 102);
+  padding-top: 25px;
+  padding-bottom: 23px;
+  font-size: 16px;
 }
