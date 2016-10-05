@@ -3,7 +3,7 @@ import GreetingContainer from './greeting/greeting_container';
 
 const App = ({ children }) => (
   <div>
-    <h1>Medium Cup Of Joe App</h1>
+    <div className="logo-container"><h1>Medium Cup Of Joe App logo here</h1></div>
     <GreetingContainer />
     {children}
   </div>

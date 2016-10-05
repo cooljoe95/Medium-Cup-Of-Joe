@@ -49,19 +49,20 @@ class SessionForm extends React.Component {
     } else {
       header = <h2>Sign up</h2>;
       link = <Link to='/login'>Log in</Link>;
-      email = <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.updateState("email")}/>;
+      email = <input type="text" className="form-element" name="email" placeholder="email" value={this.state.email} onChange={this.updateState("email")}/>;
     }
 
     return (
       <div className="new-session">
-        {header}
-        Or would you rather, {link}
-        <br/><br/>
+        <div className="form-head">
+          {header}
+          Or would you rather, {link}
+        </div>
         <form onSubmit={handleSubmit} className="new-session-form">
-          <input type="text" value={this.state.username} name="username" placeholder="username" onChange={this.updateState("username")}/>
-          <input type="password" name="password" value={this.state.password} placeholder="password" onChange={this.updateState("password")}/>
+          <input type="text" value={this.state.username} name="username" className="form-element" placeholder="username" onChange={this.updateState("username")}/>
+          <input type="password" name="password" value={this.state.password} placeholder="password" className="form-element" onChange={this.updateState("password")}/>
           {email}
-          <input type="submit"/>
+          <input type="submit" className="form-element"/>
         </form>
         <ul>
           {this.props.errors.map( (error, idx) => {return <li key={`error-${idx}`}>{error}</li>;})}

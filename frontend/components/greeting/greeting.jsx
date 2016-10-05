@@ -20,7 +20,7 @@ export default class Greeting extends React.Component{
       );
     } else {
       welcomeMessage = (
-        <div className="logged_out_welcome">
+        <div className="logged_out_nav">
           <Link to={"/signup"}>Signup</Link>
           <Link to={"/login"}>Login</Link>
         </div>
