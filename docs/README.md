@@ -32,9 +32,9 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 ### Phase 1: Backend Authentication and Front End User Authentication (2 Days)
 **Objective**: Create users and impolent authentication to Medium Cup of Joe
 - [x] New Rails project
-- [ ] **`User`** model/migration
-- [ ] Back end authentication (session/password)
-- [ ] **`StaticPages`** controller and root view
+- [x] **`User`** model/migration
+- [x] Back end authentication (session/password)
+- [x] **`StaticPages`** controller and root view
 - [ ] Webpack & react/redux modules
 - [ ] **`APIUtil`** to interact with the API
 - [ ] Redux cycle for frontend authentication
@@ -42,7 +42,7 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 - [ ] Blank landing component after signup/signin
 - [ ] Style signup/signin components
 - [ ] Bonus: Auth for Facebook/Twitter/Google Users
-- [ ] Seed users
+- [x] Seed users
 
 ### Phase 2: Stories Model, API, and components (3 Days)
 **Objective**: Create a way to create a story and see a feed of stories.
