@@ -13,7 +13,7 @@ class SessionForm extends React.Component {
     this.updateState = this.updateState.bind(this);
   }
 
-  componentDidMount(){
+  componentWillMount(){
     if(this.props.loggedIn) {
       hashHistory.push("/");
     }

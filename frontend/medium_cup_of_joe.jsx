@@ -6,7 +6,14 @@ import { login } from './actions/session_actions';
 import configureStore from './store/store';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
-    window.OnStore = configureStore();
-    window.myLogin = login;
-    ReactDOM.render(<Root store={window.OnStore}/>, root);
+    let store;
+    if(window.currentUser){
+      const preloadedState = {
+        currentUser: window.currentUser
+      };
+      store = configureStore({session: preloadedState});
+    } else {
+      store = configureStore();
+    }
+    ReactDOM.render(<Root store={store}/>, root);
 });
