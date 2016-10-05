@@ -10,7 +10,3 @@ document.addEventListener('DOMContentLoaded', () => {
     window.store = configureStore();
     ReactDOM.render(<h1>Medium Cup Of Joe.</h1>, root);
 });
-
-// window.user = {username: "1", password: "password"};
-window.success = (data) => console.log(data);
-window.errors = (errors) => console.log(errors);
