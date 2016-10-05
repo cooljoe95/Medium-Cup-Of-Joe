@@ -1,18 +1,22 @@
-import * as SessionAction from '../actions/session_actions';
+import { LOGIN, LOGOUT, SIGNUP, receiveErrors, receiveCurrentUser } from '../actions/session_actions';
+import { signup, logout, login } from '../util/session_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
-	const successCallback = (user) => dispatch(SessionAction.receiveCurrentUser(user));
-	const errorCallback = (error) => dispatch(SessionAction.receiveErrors(error.responseJSON));
+	debugger
+	const successCallback = (user) => dispatch(receiveCurrentUser(user));
+	const errorCallback = (error) => dispatch(receiveErrors(error.responseJSON));
 
 	switch(action.type){
-		case SessionAction.LOGIN:
-			SessionAction.login(action.user, successCallback, errorCallback);
+		case LOGIN:
+			login(action.user, successCallback, errorCallback);
 			return next(action);
-		case SessionAction.LOGOUT:
-			SessionAction.logout(() => next(action));
+		case LOGOUT:
+			debugger
+			console.log(logout);
+			logout(() => next(action));
 			break;
-		case SessionAction.SIGNUP:
-			SessionAction.signup(action.user, successCallback, errorCallback);
+		case SIGNUP:
+			signup(action.user, successCallback, errorCallback);
 			return next(action);
 		default:
 			return next(action);

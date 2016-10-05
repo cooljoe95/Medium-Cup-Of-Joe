@@ -11,6 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<h1>Medium Cup Of Joe.</h1>, root);
 });
 
-window.user = {username: "1", password: "password"};
+// window.user = {username: "1", password: "password"};
 window.success = (data) => console.log(data);
 window.errors = (errors) => console.log(errors);

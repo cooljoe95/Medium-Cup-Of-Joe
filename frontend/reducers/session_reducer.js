@@ -12,7 +12,9 @@ export default (state = _defaultSession, action={}) => {
     case(RECEIVE_ERRORS):
       return {currentUser: null, errors: merge([], action.errors)};
     case(RECEIVE_CURRENT_USER):
-      return {currentUser: merge({}, {currentUser: action.user}).currentUser, errors: []};
+      const newCurrentUser = merge({}, {currentUser: action.currentUser});
+      debugger
+      return {currentUser: newCurrentUser.currentUser, errors: []};
     case(LOGOUT):
       return {currentUser: null, errors: []};
     default:
