@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="jumbotron vertical-center">
-        <div className="new-session">
+        <div className="new-session noselect">
           <div className="form-head">
             {head}{link}
           </div>
@@ -67,15 +67,11 @@ class SessionForm extends React.Component {
             <input type="password" name="password" value={this.state.password} placeholder="password" className="form-element" onChange={this.updateState("password")}/>
             {email}
             <container className="submit-container">
-              <input type="submit" className="form-element"/>
+              <a>
+                <input type="submit" className="form-element"/>
+              </a>
             </container>
           </form>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
           <ul>
             {this.props.errors.map( (error, idx) => {return <li key={`error-${idx}`}>{error}</li>;})}
           </ul>

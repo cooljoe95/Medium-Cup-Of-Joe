@@ -68,16 +68,12 @@ body {
   margin: auto;
   background: rgb(255, 255, 255);
   border-radius: 4px;
-  margin-bottom: 15px;
+  padding-bottom: 100px;
   color: rgb(170, 170, 170);
 }
 
 .vertical-center {
-  // min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  // min-height: 100vh; /* These two lines are counted as one :-)       */
-  //
-  // display: flex;
-  // align-items: center;
+
   position: absolute;
   left: 50%;
   top: 50%;
@@ -115,14 +111,21 @@ input, select, textarea {
 
 .form-element:last-child{
   border-bottom: 0;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-top: 25px;
   // margin-bottom: 25px;
   border: 1px solid rgb(2, 184, 117);
   border-radius: 2px;
+  color: rgb(0,171, 107);
+  cursor: pointer
   // border-bottom: 100px solid white;
 }
+
+.form-element:last-child:hover{
+  background-color: rgb(243, 243, 243);
+}
+
 
 .form-element:focus{
   outline: none;
@@ -134,4 +137,14 @@ input, select, textarea {
   padding-top: 25px;
   padding-bottom: 23px;
   font-size: 14px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+  not supported by any browser */
 }
