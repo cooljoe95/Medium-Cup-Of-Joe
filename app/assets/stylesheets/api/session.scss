@@ -67,7 +67,8 @@ body {
   width: 520px;
   margin: auto;
   background: rgb(255, 255, 255);
-  border-radius: 3px;
+  border-radius: 4px;
+  margin-bottom: 15px;
   color: rgb(170, 170, 170);
 }
 
@@ -103,7 +104,7 @@ body {
   padding-left: 8px;
   width: 87%;
   background-color: white;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 100;
   font-family:sans-serif;
 }
@@ -115,6 +116,12 @@ input, select, textarea {
 .form-element:last-child{
   border-bottom: 0;
   padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: 25px;
+  // margin-bottom: 25px;
+  border: 1px solid rgb(2, 184, 117);
+  border-radius: 2px;
+  // border-bottom: 100px solid white;
 }
 
 .form-element:focus{
@@ -126,5 +133,5 @@ input, select, textarea {
   color: rgb(102, 102, 102);
   padding-top: 25px;
   padding-bottom: 23px;
-  font-size: 16px;
+  font-size: 14px;
 }
