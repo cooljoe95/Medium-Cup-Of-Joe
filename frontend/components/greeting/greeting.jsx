@@ -10,7 +10,6 @@ export default class Greeting extends React.Component{
 
   render(){
     let welcomeMessage;
-    debugger
     if(this.props.currentUser){
       welcomeMessage = (
         <div className="logged_in_welcome">
@@ -22,8 +21,8 @@ export default class Greeting extends React.Component{
     } else {
       welcomeMessage = (
         <div className="logged_out_welcome">
-          <Link to={"/#/signup"}>Signup</Link>
-          <Link to={"/#/login"}>Login</Link>
+          <Link to={"/signup"}>Signup</Link>
+          <Link to={"/login"}>Login</Link>
         </div>
       );
     }

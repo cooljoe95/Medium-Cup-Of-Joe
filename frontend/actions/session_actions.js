@@ -13,10 +13,13 @@ export const logout = () => ({
   type: LOGOUT
 });
 
-export const signup = (user) => ({
-  type: SIGNUP,
-  user
-});
+export const signup = (user) => {
+  debugger
+  return {
+    type: SIGNUP,
+    user
+  };
+};
 
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,

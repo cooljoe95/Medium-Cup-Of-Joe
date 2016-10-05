@@ -3,10 +3,10 @@ export const signup = (user, success, error) => {
     url: "/api/users",
     method: "POST",
     dataType: "json",
-    data: { user },
+    data: user,
     success,
     error
-  })
+  });
 };
 
 export const login = (user, success, error) => {
@@ -14,10 +14,10 @@ export const login = (user, success, error) => {
     url: "/api/session",
     method: "POST",
     dataType: "json",
-    data: { user },
+    data: user,
     success,
     error
-  })
+  });
 };
 
 export const logout = (success, error) => {
@@ -27,5 +27,5 @@ export const logout = (success, error) => {
     dataType: "json",
     success,
     error
-  })
+  });
 };

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Greeting from './greeting';
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     currentUser: state.session.currentUser
   };
