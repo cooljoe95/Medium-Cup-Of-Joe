@@ -40,33 +40,31 @@ class SessionForm extends React.Component {
       this.props.processForm({user});
     };
 
-    let header;
     let link;
     let email;
     if(this.props.formType === "login"){
-      header = <h2>Log in</h2>;
       link = <Link to='/signup'>Sign up</Link>;
     } else {
-      header = <h2>Sign up</h2>;
-      link = <Link to='/login'>Log in</Link>;
+       link = <Link to='/login'>Log in</Link>;
       email = <input type="text" className="form-element" name="email" placeholder="email" value={this.state.email} onChange={this.updateState("email")}/>;
     }
 
     return (
-      <div className="new-session">
-        <div className="form-head">
-          {header}
-          Or would you rather, {link}
+      <div className="jumbotron vertical-center">
+        <div className="new-session">
+          <div className="form-head">
+            <h2>Enter your email address to sign in or create an account on Medium Cup of Joe</h2>
+          </div>
+          <form onSubmit={handleSubmit} className="new-session-form">
+            <input type="text" value={this.state.username} name="username" className="form-element" placeholder="username" onChange={this.updateState("username")}/>
+            <input type="password" name="password" value={this.state.password} placeholder="password" className="form-element" onChange={this.updateState("password")}/>
+            {email}
+            <input type="submit" className="form-element"/>
+          </form>
+          <ul>
+            {this.props.errors.map( (error, idx) => {return <li key={`error-${idx}`}>{error}</li>;})}
+          </ul>
         </div>
-        <form onSubmit={handleSubmit} className="new-session-form">
-          <input type="text" value={this.state.username} name="username" className="form-element" placeholder="username" onChange={this.updateState("username")}/>
-          <input type="password" name="password" value={this.state.password} placeholder="password" className="form-element" onChange={this.updateState("password")}/>
-          {email}
-          <input type="submit" className="form-element"/>
-        </form>
-        <ul>
-          {this.props.errors.map( (error, idx) => {return <li key={`error-${idx}`}>{error}</li>;})}
-        </ul>
       </div>
     );
   }
