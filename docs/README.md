@@ -57,12 +57,12 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
     - [ ] **`StoryForm`** (Create a new story)
 - [ ] Autosave stories feature
 - [ ] Style story components
-- [ ] Seed stories
+- [x] Seed stories
 
 ### Phase 3: Commenting (1 Day)
 **Objective**: Create a way to comment on an article and insert to the bottom of the story container
-- [ ] Utilize the response_id of the **`Story`** model to simulate comments
-- [ ] Seed comments
+- [x] Utilize the response_id of the **`Story`** model to simulate comments
+- [x] Seed comments
 - [ ] Comments form
 - [ ] Style the comments
 - [ ] Insert the footer in the bottom of the Story container
