@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import { login } from './actions/session_actions';
+import { receiveStories, requestStories } from './actions/story_actions';
 
 import configureStore from './store/store';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
+    window.myRequestStories = requestStories;
+    window.myReceiveStories = receiveStories;
     let store;
     if(window.currentUser){
       const preloadedState = {
@@ -15,5 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }
+    window.myStore = store;
     ReactDOM.render(<Root store={store}/>, root);
 });
