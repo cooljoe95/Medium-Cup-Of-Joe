@@ -1,12 +1,12 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
-
+import { Link } from 'react-router'
 const App = ({ children }) => (
-  <div>
+  <div className="what-is-this-class">
     <div className="logo-container group">
-      <img
+      <Link to="/"><img
         src={window.twitterAssets.firstImage}
-        className="bad-tweet"></img><GreetingContainer />
+        className="logo"></img></Link><GreetingContainer />
     </div>
     {children}
   </div>
