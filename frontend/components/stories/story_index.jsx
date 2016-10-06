@@ -1,4 +1,5 @@
 import React from 'react';
+import StoryIndexItem from './story_index_item';
 
 class StoryIndex extends React.Component{
   componentDidMount() {
@@ -8,7 +9,8 @@ class StoryIndex extends React.Component{
   render(){
     const originalStories = (story) => {
       if(story.response_id === null){
-        return <li key={story.id} className="original-story-index-view">{story.title}</li>;
+        return <StoryIndexItem key={story.id} story={story} />;
+        // return ;
       }
     };
 
