@@ -49,7 +49,7 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 - [ ] Create Header
 - [x] **`Story`** model
 - [x] Seed database with a small amount of test data
-- [ ] CRUD API for notes (**`StoryController`**)
+- [ ] CRUD API for stories (**`StoryController`**)
 - [ ] JBuilder views for stories
   * Story components and respective Redux loops
     - [ ] **`StoryIndex`** (List of the stories)
