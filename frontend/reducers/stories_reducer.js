@@ -1,8 +1,9 @@
+import { RECEIVE_STORIES } from "../actions/story_actions";
+
 const StoriesReducer = (state = {}, action={}) => {
   switch (action.type) {
-    case expression:
-
-      break;
+    case RECEIVE_STORIES:
+      return action.stories;
     default:
       return state;
   }

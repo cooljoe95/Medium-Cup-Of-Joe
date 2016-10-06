@@ -1,12 +1,12 @@
-import { REQUEST_STORIES, RECEIVE_STORIES } from '../actions/story_actions';
+import { REQUEST_STORIES, RECEIVE_STORIES, receiveStories } from '../actions/story_actions';
+import { fetchStories } from "../util/story_api_util";
 
-const StoriesMiddleware = (store) => next => action => {
-  const getState = store.getState;
-  const dispatch = store.dispatch;
+const StoriesMiddleware = ({getState, dispatch}) => next => action => {
 
   switch (action.type) {
     case REQUEST_STORIES:
-      console.log('time to fetch!');
+      const success = data => dispatch(receiveStories(data));
+      fetchStories(success);
       return next(action);
     default:
       next(action);
