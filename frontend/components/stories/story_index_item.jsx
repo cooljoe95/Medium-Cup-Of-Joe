@@ -16,6 +16,8 @@ class StoryIndexItem extends React.Component{
           {this.story.title}
           {this.story.body.split(/[^\w\s]|_/g)[0]}...
         </li>
+        Num Likes
+        Num Comments
       </div>
     );
   }

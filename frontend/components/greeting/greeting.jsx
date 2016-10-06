@@ -12,15 +12,15 @@ export default class Greeting extends React.Component{
     let welcomeMessage;
     if(this.props.currentUser){
       welcomeMessage = (
-        <div className="logged_in_welcome">
-          Welcome {this.props.currentUser.username}
-          <br/><br/>
+        <div className="nav">
+          {this.props.currentUser.profile_pic_url}
+          {this.props.currentUser.username}
           <button onClick={this.props.logout}>Logout</button>
         </div>
       );
     } else {
       welcomeMessage = (
-        <div className="logged_out_nav">
+        <div className="nav">
           <Link to={"/signup"}>Signup</Link>
           <Link to={"/login"}>Login</Link>
         </div>
