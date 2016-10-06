@@ -5,6 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
+    <script type="text/javascript">
+    window.twitterAssets = {
+      // image_url is a rails helper method that does the fingerprinting
+      // so we need erb tag to use ruby
+      // file name is an argument to the image_url method
+      firstImage: "<%= image_url("medium-cup-of-joe-logo--1-.png") %>"
+    }
+  </script>
 </head>
 <body>
 

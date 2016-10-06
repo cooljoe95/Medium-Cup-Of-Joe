@@ -15,14 +15,14 @@ export default class Greeting extends React.Component{
         <div className="nav">
           {this.props.currentUser.profile_pic_url}
           {this.props.currentUser.username}
-          <button onClick={this.props.logout}>Logout</button>
+          <Link onClick={this.props.logout}>Logout</Link>
         </div>
       );
     } else {
       welcomeMessage = (
         <div className="nav">
-          <Link to={"/signup"}>Signup</Link>
-          <Link to={"/login"}>Login</Link>
+          <Link to={"/login"}>Sign in </Link>/
+          <Link to={"/signup"}> Sign up</Link>
         </div>
       );
     }

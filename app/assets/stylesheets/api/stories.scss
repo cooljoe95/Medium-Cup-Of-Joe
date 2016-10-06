@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+  background-color: white;
 }
 ol, ul {
 	list-style: none;
@@ -48,7 +49,9 @@ table {
 }
 
 .logo-container{
-  background-color: red;
+  background-color: white;
+  max-width: 1000px;
+  margin:auto;
 }
 
 .logo-container > p {
@@ -56,13 +59,38 @@ table {
   background-color: blue;
 }
 
-.logo-container > div {
+.nav {
   float: right;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 20px;
+}
 
+.nav:hover > a{
+  color: rgb(101, 186, 149);
+}
+
+.nav > a{
+  color: rgb(96, 202, 162);
+  cursor: pointer;
+  text-align: center;
+}
+
+.logo-container > img{
+  height: 30px;
+  padding: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .group::after{
   clear: both;
   content: " ";
   display: block;
+}
+
+.story-index{
+  height: 100%;
+  background-color: green;
 }

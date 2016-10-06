@@ -4,7 +4,9 @@ import GreetingContainer from './greeting/greeting_container';
 const App = ({ children }) => (
   <div>
     <div className="logo-container group">
-      <p>Pic</p><GreetingContainer />
+      <img
+        src={window.twitterAssets.firstImage}
+        className="bad-tweet"></img><GreetingContainer />
     </div>
     {children}
   </div>
