@@ -1,9 +1,9 @@
-export const fetchBenches = (success, error) => {
+export const fetchStories = (success, error) => {
   $.ajax({
     url: "api/stories",
     method: "GET",
     dataType: "json",
-    successs,
+    success,
     error
   });
 };
