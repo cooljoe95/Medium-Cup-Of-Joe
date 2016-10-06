@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthorInfoItem from './author_info_item';
 
 class StoryIndexItem extends React.Component{
   constructor(props){
@@ -8,7 +9,14 @@ class StoryIndexItem extends React.Component{
 
   render(){
     return (
-      <li className="original-story-index-view">{this.story.title}</li>
+      <div className="individual-story">
+        <p>Tags Container</p>
+        <AuthorInfoItem author={this.story.author} key={`author-of-${this.story.id}`} />
+        <li className="original-story-index-view">
+          {this.story.title}
+          {this.story.body.split(/[^\w\s]|_/g)[0]}...
+        </li>
+      </div>
     );
   }
 }

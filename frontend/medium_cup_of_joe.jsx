@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import { login } from './actions/session_actions';
 import { receiveStories, requestStories } from './actions/story_actions';
-import { fetchStories } from './util/story_api_util';
+import { fetchStories, fetchAuthors } from './util/story_api_util';
 
 import configureStore from './store/store';
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.myRequestStories = requestStories;
     window.myReceiveStories = receiveStories;
     window.myFetchStories = fetchStories;
+    window.myFetchAuthors = fetchAuthors;
     let store;
     if(window.currentUser){
       const preloadedState = {

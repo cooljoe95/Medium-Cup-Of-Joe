@@ -19,6 +19,7 @@ class StoryIndex extends React.Component{
         <ul className="original-stories-container">
           {Object.keys(this.props.stories).map((myKey) => {
             const story = this.props.stories[myKey];
+
             return originalStories(story);
           })}
         </ul>
