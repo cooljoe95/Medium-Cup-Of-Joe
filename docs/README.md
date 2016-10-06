@@ -4,7 +4,7 @@
 MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
 - [x] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] Stories
 - [ ] Commenting on stories
 - [ ] Allow users to follow writers and getting a feed
@@ -40,15 +40,15 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 - [x] Redux cycle for frontend authentication
 - [x] User signup/signin components
 - [x] Blank landing component after signup/signin
-- [ ] Style signup/signin components
+- [x] Style signup/signin components
 - [ ] Bonus: Auth for Facebook/Twitter/Google Users
 - [x] Seed users
 
 ### Phase 2: Stories Model, API, and components (3 Days)
 **Objective**: Create a way to create a story and see a feed of stories.
 - [ ] Create Header
-- [ ] **`Story`** model
-- [ ] Seed database with a small amount of test data
+- [x] **`Story`** model
+- [x] Seed database with a small amount of test data
 - [ ] CRUD API for notes (**`StoryController`**)
 - [ ] JBuilder views for stories
   * Story components and respective Redux loops
