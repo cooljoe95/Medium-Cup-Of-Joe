@@ -17,9 +17,6 @@ class Api::StoriesController < ApplicationController
     @story = Story.find(params[:id])
     @responses = @story.responses.includes(:author)
     @authors = @story.author_id
-    puts(@story)
-    puts(@responses)
-    puts(@authors)
     render "api/stories/show"
   end
 
