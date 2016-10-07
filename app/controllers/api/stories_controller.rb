@@ -20,6 +20,7 @@ class Api::StoriesController < ApplicationController
     puts(@story)
     puts(@responses)
     puts(@authors)
+    render "api/stories/show"
   end
 
   def story_params

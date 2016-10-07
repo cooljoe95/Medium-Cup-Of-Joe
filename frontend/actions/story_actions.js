@@ -19,6 +19,6 @@ export const receiveStories = (stories) => {
 export const requestStory = (id) => {
   return {
     type: REQUEST_STORY,
-    story
+    id
   };
 };
