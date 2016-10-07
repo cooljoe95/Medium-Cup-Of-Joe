@@ -10,7 +10,6 @@ class StoryIndexItem extends React.Component{
   render(){
     return (
       <div className="individual-story">
-        <p>Tags Container</p>
         <AuthorInfoItem author={this.story.author} key={`author-of-${this.story.id}`} />
         <li className="original-story-index-view">
           {this.story.title}
