@@ -46,13 +46,13 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 
 ### Phase 2: Stories Model, API, and components (3 Days)
 **Objective**: Create a way to create a story and see a feed of stories.
-- [ ] Create Header
+- [x] Create Header
 - [x] **`Story`** model
 - [x] Seed database with a small amount of test data
 - [ ] CRUD API for stories (**`StoryController`**)
 - [ ] JBuilder views for stories
   * Story components and respective Redux loops
-    - [ ] **`StoryIndex`** (List of the stories)
+    - [x] **`StoryIndex`** (List of the stories)
     - [ ] **`StoryIndexItem`** (Individual story)
     - [ ] **`StoryForm`** (Create a new story)
 - [ ] Autosave stories feature
