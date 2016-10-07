@@ -118,3 +118,21 @@ body{
 .what-is-this-class{
   background-color: white;
 }
+
+.home-splash{
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+  // max-width: 1000px;
+  margin: auto;
+  display: block;
+  margin-top: 40px;
+  border-radius: 4px;
+}
+
+.individual-story{
+  background-color: rgb(255,255,255);
+  margin-bottom: 20px;
+  max-width: 660px;
+  height: auto;
+}

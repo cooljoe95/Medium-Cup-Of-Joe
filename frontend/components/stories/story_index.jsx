@@ -16,6 +16,9 @@ class StoryIndex extends React.Component{
 
     return (
       <div className="story-index">
+        <img
+          src={window.twitterAssets.secondImage}
+          className="home-splash"></img>
         <ul className="original-stories-container">
           {Object.keys(this.props.stories).map((myKey) => {
             const story = this.props.stories[myKey];
