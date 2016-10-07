@@ -103,7 +103,7 @@ table {
 }
 
 .original-stories-container{
-  max-width: 1000px;
+  max-width: 660px;
   margin: auto;
   padding-top: 40px;
 }
@@ -131,10 +131,57 @@ body{
 }
 
 .individual-story{
+  margin: auto;
   background-color: rgb(255,255,255);
   margin-bottom: 20px;
   max-width: 660px;
   height: auto;
   border: 1px solid rgb(232, 232, 232);
   border-radius: 4px;
+}
+
+.individual-author{
+  color: rgb(96, 202, 162);
+  margin-left: 20px;
+  max-width: 275px;
+  margin-top: 10px;
+  font-size: 14px;
+  position: relative;
+}
+
+.individual-author > img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.original-story-index-view{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.stories-and-feed{
+  max-width: 1000px;
+  margin: auto;
+}
+
+.original-story-index-view > h1{
+  font-size: 28px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.author-info{
+  position: absolute;
+  top: 4px;
+  left: 45px;
+}
+
+.original-story-index-view > p{
+  font-family: serif;
+  font-size: 18px;
+  font-weight: 0;
+  padding-bottom: 10px;
+  letter-spacing: normal;
+  color: rgb(74, 74, 74);
 }

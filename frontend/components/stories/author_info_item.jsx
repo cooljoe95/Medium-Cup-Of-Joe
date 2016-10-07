@@ -9,8 +9,8 @@ class AuthorInfoItem extends React.Component{
   render(){
     return (
       <div className="individual-author">
-        {this.author.profile_pic_url}
-        {this.author.username}
+        <img src={window.twitterAssets.secondImage}/>
+        <span className="author-info">{this.author.username}</span>
       </div>
     );
   }
