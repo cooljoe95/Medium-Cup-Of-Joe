@@ -7,3 +7,13 @@ export const fetchStories = (success, error) => {
     error
   });
 };
+
+export const fetchStory = (id, success, error) => {
+  $.ajax({
+    url: `api/stories/${id}`,
+    method: "GET",
+    dataType: "json",
+    success,
+    error
+  });
+};

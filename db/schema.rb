@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004175522) do
+ActiveRecord::Schema.define(version: 20161007203711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,14 +40,16 @@ ActiveRecord::Schema.define(version: 20161004175522) do
 
   create_table "stories", force: :cascade do |t|
     t.string   "title"
-    t.text     "body",        null: false
-    t.integer  "author_id",   null: false
+    t.text     "body",             null: false
+    t.integer  "author_id",        null: false
     t.integer  "response_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "original_post_id"
   end
 
   add_index "stories", ["author_id"], name: "index_stories_on_author_id", using: :btree
+  add_index "stories", ["original_post_id"], name: "index_stories_on_original_post_id", using: :btree
   add_index "stories", ["response_id"], name: "index_stories_on_response_id", using: :btree
 
   create_table "tags", force: :cascade do |t|

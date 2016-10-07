@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+Story.destroy_all
+
 users = User.create([
 	{
 		username: "1",
@@ -61,7 +64,8 @@ stories = Story.create([
     title: "Three's response to One",
     body: "I'm user three and I'm responding to One's second post",
     author_id: 3,
-    response_id: 2
+    response_id: 2,
+    original_post_id: 2
   },
   {
     title: "Four's original first Post",
@@ -73,12 +77,14 @@ stories = Story.create([
     title: "Four also responds to other posters",
     body: "I Guess I can respond to a response",
     author_id: 4,
-    response_id: 4
+    response_id: 4,
+    original_post_id: 2
   },
   {
     title: "Four will also respond to an original poster",
     body: "I am responding to an original poster",
     author_id: 4,
-    response_id: 3
+    response_id: 3,
+    original_post_id: 3
   }
 ])

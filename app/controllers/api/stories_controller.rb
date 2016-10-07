@@ -8,4 +8,22 @@ class Api::StoriesController < ApplicationController
     render "api/stories/index"
   end
 
+
+  def create
+
+  end
+
+  def show
+    @story = Story.find(params[:id])
+    @responses = @story.responses.includes(:author)
+    @authors = @story.author_id
+    puts(@story)
+    puts(@responses)
+    puts(@authors)
+  end
+
+  def story_params
+    params.require(:story).permit(:response_id, :author, :original_post, :title, :body)
+  end
+
 end
