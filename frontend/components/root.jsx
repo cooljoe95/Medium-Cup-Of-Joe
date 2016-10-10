@@ -5,6 +5,7 @@ import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import StoryIndexContainer from './stories/story_index_container';
 import StoryFormContainer from './story_form/story_form_container';
+import StoryDetailShowContainer from './stories/story_detail_show_container';
 
 const _redirectIfLoggedIn = () => {
   if(window.currentUser){
@@ -18,8 +19,10 @@ const Root = ({ store }) => (
       <Route path="/" component={App}>
         <IndexRoute component={StoryIndexContainer} />
         <Route path="/stories/new" component={StoryFormContainer} />
+        <Route path="/stories/:storyId" component={StoryDetailShowContainer} />
         <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
         <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
+        <Route path="*" componenet={StoryIndexContainer} />
       </Route>
     </Router>
   </Provider>

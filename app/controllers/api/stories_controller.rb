@@ -10,13 +10,13 @@ class Api::StoriesController < ApplicationController
 
 
   def create
-
+    @story = Story.create!(story_params)
+    render :show
   end
 
   def show
     @story = Story.find(params[:id])
     @responses = @story.responses.includes(:author)
-    @authors = @story.author_id
     render "api/stories/show"
   end
 

@@ -8,8 +8,9 @@ export default class StoryForm extends React.Component{
   render(){
     return (
       <div className="new-story-form">
+        <input type="submit"/>
         <input type="text" placeholder="Title"></input>
-        <input type="text" description="Body"></input>
+        <textarea></textarea>
       </div>
     );
   }

@@ -2,5 +2,5 @@ node_modules/
 bundle.js
 bundle.js.map
 log/
-tmp/
+tmp/*
 .byebug_history

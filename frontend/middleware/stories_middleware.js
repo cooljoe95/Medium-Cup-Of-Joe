@@ -1,5 +1,5 @@
-import { REQUEST_STORIES, RECEIVE_STORIES, receiveStories } from '../actions/story_actions';
-import { fetchStories } from "../util/story_api_util";
+import { REQUEST_STORIES, RECEIVE_STORIES, REQUEST_STORY, receiveStories, receiveStory } from '../actions/story_actions';
+import { fetchStories, fetchStory } from "../util/story_api_util";
 
 const StoriesMiddleware = ({getState, dispatch}) => next => action => {
 
@@ -8,8 +8,12 @@ const StoriesMiddleware = ({getState, dispatch}) => next => action => {
       const success = data => dispatch(receiveStories(data));
       fetchStories(success);
       return next(action);
+    case REQUEST_STORY:
+      debugger
+      fetchStory(action.id, (data) => dispatch(receiveStory(data)));
+      return next(action);
     default:
-      next(action);
+      return next(action);
   }
 };
 
