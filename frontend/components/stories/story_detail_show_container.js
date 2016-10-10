@@ -7,18 +7,20 @@ import { selectStory } from '../../reducers/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
-  const storyId = parseInt(ownProps.params.id);
+  const storyId = parseInt(ownProps.params.storyId);
   const story = selectStory(state.stories, storyId);
-  debugger
   return {
     storyId,
     story
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  requestStory: id => dispatch(requestStory(id))
-});
+const mapDispatchToProps = dispatch => {
+  debugger
+  return {
+    requestStory: id => dispatch(requestStory(id))
+  };
+};
 
 export default connect(
   mapStateToProps,

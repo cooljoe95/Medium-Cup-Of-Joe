@@ -1,1 +1,1 @@
-json.extract! story, :id, :title, :body, :responses, :response_id
+json.extract! story, :id, :title, :body

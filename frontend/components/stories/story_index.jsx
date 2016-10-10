@@ -8,10 +8,7 @@ class StoryIndex extends React.Component{
 
   render(){
     const originalStories = (story) => {
-      if(story.response_id === null){
-        return <StoryIndexItem key={story.id} story={story} />;
-        // return ;
-      }
+      return <StoryIndexItem key={story.id} story={story} />;
     };
 
     return (

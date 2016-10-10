@@ -11,7 +11,6 @@ class StoryIndexItem extends React.Component{
 
   handleClick() {
     const storyId = this.story.id;
-    window.currentStory = this.story
     hashHistory.push( "stories/" + storyId);
   }
 

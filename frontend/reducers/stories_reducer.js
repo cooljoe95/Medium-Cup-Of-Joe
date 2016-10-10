@@ -11,7 +11,7 @@ const StoriesReducer = (state = {}, action={}) => {
       return merge(_defaultState, {stories: action.stories}).stories;
     case RECEIVE_STORY:
       const newStory = {[action.story.id]: action.story};
-      return merge({}, state, newBench);
+      return merge({}, state, newStory);
     default:
       return state;
   }

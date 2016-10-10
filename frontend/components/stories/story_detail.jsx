@@ -7,8 +7,8 @@ const StoryDetail = ({story}) => {
 	return (
 		<div>
 			<div className="story-show">
-				<span className="title">{window.currentStory ? window.currentStory.title : "Haha"}</span>
-				<span className="body">{window.currentStory ? window.currentStory.body : "LOL"}</span>
+				<span className="title">{story.title}</span>
+				<span className="body">{story.body}</span>
 			</div>
 		</div>
 	);
