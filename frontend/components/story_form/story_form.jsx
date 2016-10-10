@@ -1,8 +1,7 @@
 import React from "react";
 import autosize from 'autosize';
-import { withRouter } from "react-router";
-
-class StoryForm extends React.Component{
+import { hashHistory } from 'react-router';
+export default class StoryForm extends React.Component{
   constructor(props){
     super(props);
     this.createNewStory = this.createNewStory.bind(this);
@@ -11,12 +10,12 @@ class StoryForm extends React.Component{
       body: "",
       author: window.currentUser
     };
-    this.navigateToSearch = this.navigateToSearch.bind(this);
   }
 
-  navigateToSearch() {
-    debugger // Want to push to the story's show page
-    // this.props.router.push("/");
+  componentWillMount(){
+    if(!window.currentUser){
+      hashHistory.push("/login");
+    }
   }
 
   componentDidMount(){
@@ -34,7 +33,6 @@ class StoryForm extends React.Component{
       return;
     }
     const returnedStory = this.props.createStory({story});
-    // this.navigateToSearch();
   }
 
   render(){
@@ -51,5 +49,3 @@ class StoryForm extends React.Component{
     );
   }
 }
-
-export default withRouter(StoryForm);

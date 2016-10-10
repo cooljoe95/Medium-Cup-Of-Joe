@@ -13,13 +13,21 @@ const _redirectIfLoggedIn = () => {
   }
 }
 
+const _redirectIfLoggedOut = () => {
+  if(window.currentUser){
+    return;
+  }
+  hashHistory.push("/login");
+}
+
+
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={StoryIndexContainer} />
-        <Route path="/stories/new" component={StoryFormContainer} />
-        <Route path="/stories/:storyId" component={StoryDetailShowContainer} />
+        <Route path="/stories/new" component={StoryFormContainer} onEnter={_redirectIfLoggedOut}/>
+        <Route path="/stories/:storyId" component={StoryDetailShowContainer}/>
         <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
         <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
         <Route path="*" componenet={StoryIndexContainer} />
