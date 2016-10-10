@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import StoryForm from './story_form';
-import { requestStory } from '../../actions/story_actions';
+import { createStory } from '../../actions/story_actions';
 
 const mapStateToProps = (state) => (
   {
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => (
 
 const mapDispatchToProps = (dispatch) => (
   {
-    requestStories: (id) => dispatch(requestStory(id))
+    createStory: (story) => dispatch(createStory(story))
   }
 );
 

@@ -3,14 +3,20 @@ import { Link } from 'react-router';
 
 
 const StoryDetail = ({story}) => {
-
+  story.responses = story.responses || {};
+  const comments = Object.keys(story.responses);
 	return (
-		<div>
-			<div className="story-show">
-				<span className="title">{story.title}</span>
-				<span className="body">{story.body}</span>
-			</div>
-		</div>
+    <div className="story-detail">
+      <div className="story-show-container">
+  			<span className="title">{story.title}</span>
+  			<span className="body">{story.body}</span>
+  		</div>
+      <div className="comment-container">
+        <ul className="comments">
+          {comments.map((key) => { return <li className="comment" key={`comment-${key}`}>{story.responses[key].title}</li>;})}
+        </ul>
+      </div>
+    </div>
 	);
 };
 

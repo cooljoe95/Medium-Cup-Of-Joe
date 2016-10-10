@@ -7,16 +7,10 @@ export default class StoryShow extends React.Component{
 
 	constructor(props){
 		super(props);
-
-		const setCurrentStory = (data) => { console.log(data);};
-		if(!window.currentStory){
-
-			this.props.requestStory(this.props.params.storyId, setCurrentStory);
-		}
 	}
 
-	componentWillUnmount(){
-
+	componentDidMount(){
+    this.props.requestStory(this.props.params.storyId);
 	}
 
 	render(){

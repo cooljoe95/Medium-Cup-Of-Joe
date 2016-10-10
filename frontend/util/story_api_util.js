@@ -17,3 +17,12 @@ export const fetchStory = (id, success, error) => {
     error
   });
 };
+
+export const createStory = (story, success, error) => {
+  $.ajax({
+    url: `api/stories`,
+    method: "POST",
+    dataType: "json",
+    data: story,
+  });
+};

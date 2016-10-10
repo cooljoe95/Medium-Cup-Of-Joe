@@ -3,7 +3,7 @@ import React from 'react';
 class AuthorInfoItem extends React.Component{
   constructor(props){
     super(props);
-    this.author = props.author;
+    this.author = { username: props.author.username };
   }
 
   render(){

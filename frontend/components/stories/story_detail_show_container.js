@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-
   return {
     requestStory: id => dispatch(requestStory(id))
   };
