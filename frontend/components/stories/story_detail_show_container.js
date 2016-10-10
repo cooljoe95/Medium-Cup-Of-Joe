@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  debugger
+
   return {
     requestStory: id => dispatch(requestStory(id))
   };

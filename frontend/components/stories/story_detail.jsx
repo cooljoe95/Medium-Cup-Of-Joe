@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 
 const StoryDetail = ({story}) => {
-	debugger
+
 	return (
 		<div>
 			<div className="story-show">
@@ -22,7 +22,7 @@ export default StoryDetail;
 // 		super(props)
 // 		const setCurrentStory = (data) => { window.currentStory = (data)};
 // 		if(!window.currentStory){
-// 			debugger
+//
 // 			fetchStory(this.props.params.id, setCurrentStory);
 // 		}
 // 	}

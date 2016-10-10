@@ -18,7 +18,6 @@ export const receiveStories = (stories) => {
 };
 
 export const requestStory = (id) => {
-  debugger
   return {
     type: REQUEST_STORY,
     id

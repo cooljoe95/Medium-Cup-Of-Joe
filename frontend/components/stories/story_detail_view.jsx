@@ -6,11 +6,11 @@ import StoryDetail from "./story_detail";
 export default class StoryShow extends React.Component{
 
 	constructor(props){
-		super(props)
-    debugger
+		super(props);
+
 		const setCurrentStory = (data) => { console.log(data);};
 		if(!window.currentStory){
-			debugger
+
 			this.props.requestStory(this.props.params.storyId, setCurrentStory);
 		}
 	}
@@ -21,7 +21,7 @@ export default class StoryShow extends React.Component{
 
 	render(){
     const story = this.props.story;
-    debugger
+
 		return(
       <div className="single-story-show">
          <div >
@@ -34,7 +34,7 @@ export default class StoryShow extends React.Component{
 //
 //
 // const StoryShow = ({ story, storyId, requestStory, children }) => {
-// 	debugger
+//
 //   const stories = {
 //     [story.id]: story
 //   };

@@ -9,7 +9,7 @@ const StoriesMiddleware = ({getState, dispatch}) => next => action => {
       fetchStories(success);
       return next(action);
     case REQUEST_STORY:
-    debugger
+     
       fetchStory(action.id, (data) => dispatch(receiveStory(data)));
       return next(action);
     default:
