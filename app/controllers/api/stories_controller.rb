@@ -10,12 +10,12 @@ class Api::StoriesController < ApplicationController
 
 
   def create
-    @story = Story.create!(story_params)
-    @responses = @story.responses.includes(:author)
-    @authors = @responses.map{ |story| story.author_id }
-    @authors = User.find(@authors)
-    @authors = @authors.each_with_object({}) { |v,h| h[v.id] = v }
-    debugger
+    @story = Story.create(story_params)
+    @story.author = current_user
+    @story.save!
+    @responses = []
+    @authors = {}
+    @authors[current_user.id] = current_user
     render "api/stories/show"
   end
 

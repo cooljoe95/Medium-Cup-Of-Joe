@@ -8,10 +8,6 @@ import { fetchStories, fetchAuthors } from './util/story_api_util';
 import configureStore from './store/store';
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
-    window.myRequestStories = requestStories;
-    window.myReceiveStories = receiveStories;
-    window.myFetchStories = fetchStories;
-    window.myFetchAuthors = fetchAuthors;
     let store;
     if(window.currentUser){
       const preloadedState = {

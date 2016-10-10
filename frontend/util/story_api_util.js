@@ -24,5 +24,6 @@ export const createStory = (story, success, error) => {
     method: "POST",
     dataType: "json",
     data: story,
+    success
   });
 };
