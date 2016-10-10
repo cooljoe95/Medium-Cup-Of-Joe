@@ -16,7 +16,7 @@ class StoryForm extends React.Component{
 
   navigateToSearch() {
     debugger // Want to push to the story's show page
-    this.props.router.push("/");
+    // this.props.router.push("/");
   }
 
   componentDidMount(){
@@ -34,7 +34,7 @@ class StoryForm extends React.Component{
       return;
     }
     const returnedStory = this.props.createStory({story});
-    this.navigateToSearch();
+    // this.navigateToSearch();
   }
 
   render(){

@@ -13,7 +13,7 @@ const StoriesMiddleware = ({getState, dispatch}) => next => action => {
       fetchStory(action.id, (data) => dispatch(receiveStory(data)));
       return next(action);
     case CREATE_STORY:
-      createStory(action.story, (data) => {console.log(data); hashHistory.push(`/api/stories/$(data.id)`); dispatch(receiveStory(data));});
+      createStory(action.story, (data) => { dispatch(receiveStory(data)); hashHistory.push(`/stories/${data.id}`); });
       return next(action);
     default:
       return next(action);
