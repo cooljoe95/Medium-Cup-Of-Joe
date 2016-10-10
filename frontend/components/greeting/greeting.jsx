@@ -13,6 +13,7 @@ export default class Greeting extends React.Component{
     if(this.props.currentUser){
       welcomeMessage = (
         <div className="nav">
+          <Link to={'/stories/new'}>Write a Story</Link>
           {this.props.currentUser.profile_pic_url}
           {this.props.currentUser.username}
           <Link onClick={this.props.logout}>Logout</Link>
@@ -21,6 +22,7 @@ export default class Greeting extends React.Component{
     } else {
       welcomeMessage = (
         <div className="nav">
+          <Link to={'/stories/new'}>Write A Story</Link>
           <Link to={"/login"}>Sign in </Link>/
           <Link to={"/signup"}> Sign up</Link>
         </div>

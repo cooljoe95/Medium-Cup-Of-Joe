@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import AuthorInfoItem from './author_info_item';
 
 const StoryDetail = ({story}) => {
   story.responses = story.responses || {};
   const comments = Object.keys(story.responses);
 	return (
     <div className="story-detail">
+      <AuthorInfoItem author={story.author || {}}/>
       <div className="story-show-container">
   			<span className="title">{story.title}</span>
   			<span className="body">{story.body}</span>

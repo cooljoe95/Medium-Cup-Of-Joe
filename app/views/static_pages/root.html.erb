@@ -1,3 +1,7 @@
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+</head>
+
 <script type="text/javascript">
   <% if signed_in? %>
     window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>

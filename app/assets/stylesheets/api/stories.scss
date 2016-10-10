@@ -54,7 +54,7 @@ table {
 	border-spacing: 0;
 }
 
-.logo-container{
+.logo-container {
   background-color: white;
   max-width: 1000px;
   margin:auto;
@@ -65,6 +65,13 @@ table {
   background-color: blue;
 }
 
+.logo-container > a {
+  text-align: center;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 56px;
+  color: rgb(129, 126, 133);
+}
+
 .nav {
   float: right;
   padding-top: 25px;
@@ -72,54 +79,53 @@ table {
   padding-right: 20px;
 }
 
-.nav:hover > a{
+.nav:hover > a {
   color: rgb(101, 186, 149);
 }
 
-.nav > a{
+.nav > a {
   color: rgb(96, 202, 162);
   cursor: pointer;
   text-align: center;
 }
 
-.logo{
+.logo {
   height: 30px;
   padding: 5px 10px;
   margin-top: 10px;
   cursor: pointer;
 }
 
-.group::after{
+.group::after {
   clear: both;
   content: " ";
   display: block;
 }
 
-.story-index{
+.story-index {
   height: 100%;
   background-color: rgb(250,250,250);
   border-top: 1px solid rgb(240, 240, 240);
 
 }
 
-.original-stories-container{
+.original-stories-container {
   max-width: 660px;
   margin: auto;
   padding-top: 40px;
 }
 
 main {
-
   margin: auto;
 }
-body{
+body {
   background-color: rgb(250,250,250);
 }
-.what-is-this-class{
+.what-is-this-class {
   background-color: white;
 }
 
-.home-splash{
+.home-splash {
   max-width: 100%;
   height: auto;
   width: auto\9; /* ie8 */
@@ -130,7 +136,7 @@ body{
   border-radius: 4px;
 }
 
-.individual-story{
+.individual-story {
   margin: auto;
   background-color: rgb(255,255,255);
   padding-bottom: 30px;
@@ -142,7 +148,7 @@ body{
 
 }
 
-.individual-author{
+.individual-author {
   color: rgb(96, 202, 162);
   margin-left: 20px;
   max-width: 275px;
@@ -157,34 +163,71 @@ body{
   border-radius: 50%;
 }
 
-.original-story-index-view{
+.original-story-index-view {
   margin-top: 10px;
   margin-left: 20px;
 }
 
-.stories-and-feed{
+.stories-and-feed {
   max-width: 1000px;
   margin: auto;
 }
 
-.original-story-index-view > h1{
+.original-story-index-view > h1 {
   font-size: 26px;
   font-weight: 700;
   padding-bottom: 10px;
   color: rgb(51, 51, 51);
 }
 
-.author-info{
+.author-info {
   position: absolute;
   top: 4px;
   left: 45px;
 }
 
-.original-story-index-view > p{
+.original-story-index-view > p {
   font-family: serif;
   font-size: 18px;
   font-weight: 0;
   padding-bottom: 10px;
   letter-spacing: normal;
   color: rgb(74, 74, 74);
+}
+
+.story-show-container {
+  height: 100vh;
+  // padding-top: 40px;
+}
+
+.name {
+  float: left;
+  display: inline;
+}
+
+.story-detail {
+  margin-top: 50px;
+}
+
+.story-detail > div {
+  max-width: 700px;
+  margin: auto;
+}
+
+.story-show-container > span {
+  display: block;
+  margin-top: 50px;
+}
+
+.body {
+  font-weight: normal;
+  font-size: 20px;
+  color: rgb(78, 78, 78);
+  font-family: serif;
+}
+
+.title {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 36px;
 }

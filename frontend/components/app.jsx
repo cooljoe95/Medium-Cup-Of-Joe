@@ -6,7 +6,7 @@ const App = ({ children }) => (
     <div className="logo-container group">
       <Link to="/"><img
         src={window.twitterAssets.firstImage}
-        className="logo"></img></Link><GreetingContainer />
+        className="logo"></img>Medium Cup Of Joe</Link><GreetingContainer />
     </div>
     {children}
   </div>
