@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {MegadraftEditor, editorStateFromRaw} from "megadraft";
+import {MegadraftEditor, editorStateFromRaw, getBlocksAsArray} from "megadraft";
 
 export default class MyMegadraftEditor extends React.Component {
   constructor(props) {

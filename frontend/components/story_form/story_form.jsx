@@ -1,7 +1,9 @@
 import React from "react";
 import autosize from 'autosize';
 import { hashHistory } from 'react-router';
-import MegadraftEditor from './megadraft_editor';
+import {MegadraftEditor, editorStateFromRaw, editorStateToJSON} from "megadraft";
+import { stateToHTML } from 'draft-js-export-html';
+
 
 export default class StoryForm extends React.Component{
   constructor(props){
@@ -9,15 +11,20 @@ export default class StoryForm extends React.Component{
     this.createNewStory = this.createNewStory.bind(this);
     this.state = {
       title: "",
-      body: "",
+      body: editorStateFromRaw(null),
       author: window.currentUser
     };
+    this.onChange = this.onChange.bind(this);
   }
 
   componentWillMount(){
     if(!window.currentUser){
       hashHistory.push("/login");
     }
+  }
+
+  onChange(editorState) {
+    this.setState({body: editorState});
   }
 
   componentDidMount(){
@@ -36,13 +43,16 @@ export default class StoryForm extends React.Component{
 
   update(property) {
 
-    return e => {debugger; return this.setState({[property]: e});};
+    return e => { return this.setState({[property]: e});};
   }
 
   createNewStory(e){
     e.preventDefault();
+    this.state.body = stateToHTML(this.state.body.getCurrentContent());
     const story = Object.assign({}, this.state);
-    if(this.state.body === ""){
+    console.log("hereris the story" + story.body);
+    debugger
+    if(this.state.body === ""){ //Need to fix to correct for the change of body
       return;
     }
     const returnedStory = this.props.createStory({story});
@@ -55,10 +65,9 @@ export default class StoryForm extends React.Component{
           <div className="submit-button"><input type="submit" value="Publish"/></div>
           <input type="text" placeholder="Title" style={{width: "100%"}} value={this.state.title}
                 onChange={this.update("title")} />
-              <MegadraftEditor />
-            <textarea cols="40" rows="20" id="txtInput" style={{width: "100%"}} value={this.state.body}
-              onChange={this.update("body")} placeholder="Tell your story..."/>
-
+          <MegadraftEditor
+              editorState={this.state.body}
+              onChange={this.onChange}/>
         </form>
       </div>
     );

@@ -2,15 +2,23 @@ import React from 'react';
 import { Link } from 'react-router';
 import AuthorInfoItem from './author_info_item';
 
+
 const StoryDetail = ({story}) => {
   story.responses = story.responses || {};
   const comments = Object.keys(story.responses);
+
+  // const html = stateToHTML(editorStateFromRaw(story.body).getCurrentContent());
+  debugger
+  // const blah = editorStateFromRaw(story.body);
+  console.log("break");
+  console.log("break");
+
 	return (
     <div className="story-detail">
       <AuthorInfoItem author={story.author || {}}/>
       <div className="story-show-container">
   			<span className="title">{story.title}</span>
-  			<span className="body">{story.body}</span>
+  			<span className="body" dangerouslySetInnerHTML={{__html: story.body}}></span>
   		</div>
       <div className="comment-container">
         <ul className="comments">
