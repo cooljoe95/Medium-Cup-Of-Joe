@@ -57,6 +57,7 @@ table {
 .logo-container {
   background-color: white;
   max-width: 1000px;
+  padding-bottom: 10px;
   margin:auto;
 }
 
@@ -74,12 +75,13 @@ table {
 
 .nav {
   float: right;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 17px;
+  padding-bottom: 20px;
   padding-right: 20px;
+  position: relative;
 }
 
-.nav:hover > a {
+.nav > a:hover {
   color: rgb(101, 186, 149);
 }
 
@@ -87,12 +89,14 @@ table {
   color: rgb(96, 202, 162);
   cursor: pointer;
   text-align: center;
+  margin-top: 4px;
+  // border: 5px solid red;
 }
 
 .logo {
   height: 30px;
   padding: 5px 10px;
-  margin-top: 10px;
+  margin-top: 15px;
   cursor: pointer;
 }
 
@@ -214,9 +218,9 @@ body {
   margin: auto;
 }
 
-.story-show-container > span {
-  display: block;
-  margin-top: 50px;
+.story-detail > div:last-child{
+  max-width: 100%;
+  background-color: rgb(250,250,250);
 }
 
 .body {
@@ -224,10 +228,89 @@ body {
   font-size: 20px;
   color: rgb(78, 78, 78);
   font-family: serif;
+  display: block;
+  margin-top: 50px;
 }
 
 .title {
   font-family: sans-serif;
   font-weight: 700;
   font-size: 36px;
+}
+
+.comments {
+  max-width: 640px;
+  margin:auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.comment {
+  background-color: white;
+  padding-top: 30px;
+  border: 1px solid rgb(232, 232, 232);
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.new-story-form {
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+  padding-top: 20px;
+}
+
+.submit-button {
+  position: absolute;
+  top: -53px;
+  right: -50px;
+}
+
+.submit-button > input {
+  border: 0;
+  background-color: white;
+  color: rgb(96, 202, 162);
+  cursor: pointer;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.submit-button > input:hover {
+  color: rgb(101, 186, 149);
+}
+
+.nav > a:first-child {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.new-story-container {
+  border-top: 1px solid rgb(240, 240, 240);
+  min-height: 100vh;
+}
+
+.new-story-form > textarea{
+  border: none;
+  font-family: serif;
+  font-size: 24px;
+  font-weight: 0;
+  font-weight: normal;
+  letter-spacing: normal;
+  color: rgb(74, 74, 74);
+  padding: 2px;
+  resize: none;
+}
+
+.new-story-form > input[type=text] {
+  font-size: 36px;
+  font-weight: 700;
+  padding-bottom: 10px;
+  color: rgb(51, 51, 51);
+  border: 0;
+}
+
+input:focus, textarea:focus {
+    outline: none;
 }

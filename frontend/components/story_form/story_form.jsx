@@ -1,6 +1,10 @@
 import React from "react";
 import autosize from 'autosize';
 import { hashHistory } from 'react-router';
+import ReactDOM from 'react-dom';
+import ReactDOMServer from 'react-dom/server';
+import App from '../app';
+
 export default class StoryForm extends React.Component{
   constructor(props){
     super(props);
@@ -20,6 +24,16 @@ export default class StoryForm extends React.Component{
 
   componentDidMount(){
     autosize($('textarea'));
+    console.log(document.getElementsByClassName("write-new-story")[0].innerHTML = "");
+    // document.getElementsByClassName("write-new-story")[0].href = "#";
+    // // const submitForm = <button onClick={this.createNewStory}>Publish</button>;
+    // // console.log(document.getElementsByClassName("write-new-story")[0].outerHTML = submitForm);
+    // // console.log(ReactDOMServer.renderToString(<App/>));
+    // ReactDOM.render(<div>Publish</div>, document.getElementsByClassName("nav")[0]);
+  }
+
+  componentWillUnmount(){
+    document.getElementsByClassName("write-new-story")[0].innerHTML = "Write A Story";
   }
 
   update(property) {
@@ -39,11 +53,11 @@ export default class StoryForm extends React.Component{
     return (
       <div className="new-story-container">
         <form className="new-story-form" onSubmit={this.createNewStory}>
-          <input type="submit"/>
+          <div className="submit-button"><input type="submit" value="Publish"/></div>
           <input type="text" placeholder="Title" style={{width: "100%"}} value={this.state.title}
                 onChange={this.update("title")}></input>
               <textarea cols="40" rows="20" id="txtInput" style={{width: "100%"}} value={this.state.body}
-                onChange={this.update("body")}></textarea>
+                onChange={this.update("body")} placeholder="Tell your story..."></textarea>
         </form>
       </div>
     );

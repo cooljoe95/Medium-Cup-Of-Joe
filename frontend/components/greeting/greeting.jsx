@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { withRouter, Link } from 'react-router';
+
 // import { logout } from '../../util/session_api_util';
 
 export default class Greeting extends React.Component{
@@ -10,10 +11,11 @@ export default class Greeting extends React.Component{
 
   render(){
     let welcomeMessage;
+    const newStoryLink = <Link to={'/stories/new'} className="write-new-story">Write a Story</Link>;
     if(this.props.currentUser){
       welcomeMessage = (
         <div className="nav">
-          <Link to={'/stories/new'}>Write a Story</Link>
+          {newStoryLink}
           {this.props.currentUser.profile_pic_url}
           {this.props.currentUser.username}
           <Link onClick={this.props.logout}>Logout</Link>
@@ -22,7 +24,7 @@ export default class Greeting extends React.Component{
     } else {
       welcomeMessage = (
         <div className="nav">
-          <Link to={'/stories/new'}>Write A Story</Link>
+          {newStoryLink}
           <Link to={"/login"}>Sign in </Link>/
           <Link to={"/signup"}> Sign up</Link>
         </div>
