@@ -170,6 +170,7 @@ body {
 .original-story-index-view {
   margin-top: 10px;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .stories-and-feed {
@@ -195,12 +196,13 @@ body {
   font-size: 18px;
   font-weight: 0;
   padding-bottom: 10px;
-  letter-spacing: normal;
+  letter-spacing: 1px;
+  line-height: 1.5;
   color: rgb(74, 74, 74);
 }
 
 .story-show-container {
-  height: 100vh;
+  min-height: 100vh;
   // padding-top: 40px;
 }
 
@@ -229,6 +231,8 @@ body {
   color: rgb(78, 78, 78);
   font-family: serif;
   display: block;
+  letter-spacing: 1px;
+  line-height: 1.5;
   margin-top: 50px;
 }
 

@@ -1,9 +1,7 @@
 import React from "react";
 import autosize from 'autosize';
 import { hashHistory } from 'react-router';
-import ReactDOM from 'react-dom';
-import ReactDOMServer from 'react-dom/server';
-import App from '../app';
+import MegadraftEditor from './megadraft_editor';
 
 export default class StoryForm extends React.Component{
   constructor(props){
@@ -37,7 +35,8 @@ export default class StoryForm extends React.Component{
   }
 
   update(property) {
-    return e => this.setState({[property]: e.target.value});
+
+    return e => {debugger; return this.setState({[property]: e});};
   }
 
   createNewStory(e){
@@ -55,9 +54,11 @@ export default class StoryForm extends React.Component{
         <form className="new-story-form" onSubmit={this.createNewStory}>
           <div className="submit-button"><input type="submit" value="Publish"/></div>
           <input type="text" placeholder="Title" style={{width: "100%"}} value={this.state.title}
-                onChange={this.update("title")}></input>
-              <textarea cols="40" rows="20" id="txtInput" style={{width: "100%"}} value={this.state.body}
-                onChange={this.update("body")} placeholder="Tell your story..."></textarea>
+                onChange={this.update("title")} />
+              <MegadraftEditor />
+            <textarea cols="40" rows="20" id="txtInput" style={{width: "100%"}} value={this.state.body}
+              onChange={this.update("body")} placeholder="Tell your story..."/>
+
         </form>
       </div>
     );
