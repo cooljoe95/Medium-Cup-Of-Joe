@@ -22,9 +22,9 @@ class StoryIndexItem extends React.Component{
     }
     firstParagraph = firstParagraph.concat("...");
     return (
-      <div className="individual-story" onClick={this.handleClick} cursor="pointer">
+      <div className="individual-story">
         <AuthorInfoItem author={this.story.author} key={`author-of-${this.story.id}`} size="40" />
-        <li className="original-story-index-view" >
+        <li className="original-story-index-view" style={{ cursor: "pointer" }} onClick={this.handleClick} >
           <h1>{this.story.title}</h1>
           <p dangerouslySetInnerHTML={{__html: firstParagraph}}></p>
         </li>

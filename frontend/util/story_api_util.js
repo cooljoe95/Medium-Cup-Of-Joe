@@ -3,6 +3,7 @@ export const fetchStories = (success, error) => {
     url: "api/stories",
     method: "GET",
     dataType: "json",
+    data: {user: window.currentUser ? window.currentUser.id : 0},
     success,
     error
   });

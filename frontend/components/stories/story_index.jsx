@@ -11,6 +11,10 @@ class StoryIndex extends React.Component{
       return <StoryIndexItem key={story.id} story={story} />;
     };
 
+    const ableToAdd = (story) => {
+      return window.currentUser.following[(story.author.id)] !== undefined;
+    };
+
     return (
       <div className="story-index">
         <img
@@ -20,8 +24,13 @@ class StoryIndex extends React.Component{
           <ul className="original-stories-container">
             {Object.keys(this.props.stories).map((myKey) => {
               const story = this.props.stories[myKey];
-
-              return originalStories(story);
+              let storyItem;
+              if(!window.currentUser){
+                storyItem = originalStories(story);
+              } else {
+                storyItem = ableToAdd(story) ? originalStories(story) : null;
+              }
+              return storyItem;
             })}
           </ul>
         </div>

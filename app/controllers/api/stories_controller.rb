@@ -1,10 +1,15 @@
 class Api::StoriesController < ApplicationController
 
   def index
-    @stories = Story.where(response_id: nil).includes(:author);
-    @authors = @stories.map{ |story| story.author_id }
-    @authors = User.find(@authors)
-    @authors = @authors.each_with_object({}) { |v,h| h[v.id] = v }
+    debugger
+
+    # if params[:user] != "0"
+    #   @stories =  Story.where(response_id: nil).where(author: (User.find(params[:user]).followed_people)).includes(:author)
+    # else
+      @stories = Story.where(response_id: nil).includes(:author)
+      @authors = @stories.map{ |story| story.author_id }
+      @authors = User.find(@authors)
+      @authors = @authors.each_with_object({}) { |v,h| h[v.id] = v }
     render "api/stories/index"
   end
 
