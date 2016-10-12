@@ -3,6 +3,7 @@ import autosize from 'autosize';
 import { hashHistory } from 'react-router';
 import {MegadraftEditor, editorStateFromRaw, editorStateToJSON} from "megadraft";
 import { stateToHTML } from 'draft-js-export-html';
+import AuthorInfoItem from '../stories/author_info_item';
 
 
 export default class StoryForm extends React.Component{
@@ -31,11 +32,6 @@ export default class StoryForm extends React.Component{
   componentDidMount(){
     autosize($('textarea'));
     document.getElementsByClassName("write-new-story")[0].innerHTML = "";
-    // document.getElementsByClassName("write-new-story")[0].href = "#";
-    // // const submitForm = <button onClick={this.createNewStory}>Publish</button>;
-    // // console.log(document.getElementsByClassName("write-new-story")[0].outerHTML = submitForm);
-    // // console.log(ReactDOMServer.renderToString(<App/>));
-    // ReactDOM.render(<div>Publish</div>, document.getElementsByClassName("nav")[0]);
   }
 
   componentWillUnmount(){
@@ -52,7 +48,6 @@ export default class StoryForm extends React.Component{
 
     for(let i = 0; i < arrayOfParagraphs.length; i++){
       if (!["", "<br></p>", "</p>"].includes(arrayOfParagraphs[i])){
-        debugger
         this.state.body = string.split("\n").slice(i - 1).join("\n");
         return false;
       }
@@ -63,7 +58,6 @@ export default class StoryForm extends React.Component{
   createNewStory(e){
     e.preventDefault();
     this.state.body = stateToHTML(this.state.body.getCurrentContent());
-    debugger
     if(!this.empty(this.state.body)){
       const story = Object.assign({}, this.state);
       this.props.createStory({story});
@@ -74,12 +68,13 @@ export default class StoryForm extends React.Component{
     return (
       <div className="new-story-container">
         <form className="new-story-form" onSubmit={this.createNewStory}>
-          <div className="submit-button"><input type="submit" value="Publish"/></div>
-          <input type="text" placeholder="Title" style={{width: "100%"}} value={this.state.title}
+          <AuthorInfoItem author={window.currentUser} size="65"/>
+          <input type="text" placeholder="Title" style={{width: "100%", "margin-top": "20px"}} value={this.state.title}
                 onChange={this.update("title")} />
           <MegadraftEditor
               editorState={this.state.body}
               onChange={this.onChange}/>
+          <div className="submit-button"><input type="submit" value="Publish"/></div>
         </form>
       </div>
     );

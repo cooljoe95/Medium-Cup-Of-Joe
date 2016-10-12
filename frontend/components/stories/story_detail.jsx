@@ -9,7 +9,7 @@ const StoryDetail = ({story}) => {
 
 	return (
     <div className="story-detail">
-      <AuthorInfoItem author={story.author || {}}/>
+      <AuthorInfoItem author={story.author || {}} size="65" />
       <div className="story-show-container">
   			<span className="title">{story.title}</span>
   			<span className="body" dangerouslySetInnerHTML={{__html: story.body}}></span>

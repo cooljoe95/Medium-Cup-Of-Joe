@@ -20,13 +20,10 @@ class StoryIndexItem extends React.Component{
     if(firstParagraph.split("<p>")[0] === ""){
       firstParagraph = firstParagraph.slice(3, firstParagraph.length-4);
     }
-    if(firstParagraph === ""){
-      debugger
-    }
-    firstParagraph.concat("...");
+    firstParagraph = firstParagraph.concat("...");
     return (
       <div className="individual-story" onClick={this.handleClick} cursor="pointer">
-        <AuthorInfoItem author={this.story.author} key={`author-of-${this.story.id}`} />
+        <AuthorInfoItem author={this.story.author} key={`author-of-${this.story.id}`} size="40" />
         <li className="original-story-index-view" >
           <h1>{this.story.title}</h1>
           <p dangerouslySetInnerHTML={{__html: firstParagraph}}></p>

@@ -96,6 +96,6 @@ stories = Story.create([
     title: "Frankenstein, or the Modern Prometheus",
     author_id: 7,
     response_id: nil,
-    body: ""
+    body: "<p> Frankenstein</p>"
   }
 ])

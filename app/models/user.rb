@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token_uniqueness
 
   has_many :stories, class_name: "Story", foreign_key: "author_id"
+  has_many :followers, class_name: "Follow", foreign_key: "followed_id"
+  has_many :followed_people, class_name: "Follow", foreign_key: "follower_id"
 
   attr_reader :password
 
