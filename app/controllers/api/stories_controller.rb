@@ -1,8 +1,6 @@
 class Api::StoriesController < ApplicationController
 
   def index
-    debugger
-
     # if params[:user] != "0"
     #   @stories =  Story.where(response_id: nil).where(author: (User.find(params[:user]).followed_people)).includes(:author)
     # else

@@ -1,7 +1,6 @@
 class Api::FollowersController < ApplicationController
 
   def create
-    debugger
     Follow.create!(
       follower_id: params[:follow_relationship][:follower],
       followed_id: params[:follow_relationship][:following]
