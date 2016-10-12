@@ -24,9 +24,11 @@ class User < ActiveRecord::Base
   has_many :stories, class_name: "Story", foreign_key: "author_id"
   has_many :follower_ids, class_name: "Follow", foreign_key: "followed_id"
   has_many :followed_ids, class_name: "Follow", foreign_key: "follower_id"
+  has_many :liked_story_ids, class_name: "Like", foreign_key: "author_id"
 
   has_many :followed_people, through: :followed_ids
   has_many :followers, through: :follower_ids
+  has_many :liked_stories, through: :liked_story_ids
 
   attr_reader :password
 

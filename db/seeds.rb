@@ -8,6 +8,7 @@
 User.destroy_all
 Story.destroy_all
 Follow.destroy_all
+Like.destroy_all
 
 users = User.create([
 	{
@@ -117,5 +118,28 @@ follow = Follow.create([
   {
     follower_id: 2,
     followed_id: 3
+  }
+]);
+
+like = Like.create([
+  {
+    author_id: 1,
+    story_id: 3
+  },
+  {
+    author_id: 1,
+    story_id: 4
+  },
+  {
+    author_id: 1,
+    story_id: 5
+  },
+  {
+    author_id: 2,
+    story_id: 1
+  },
+  {
+    author_id: 2,
+    story_id: 2
   }
 ]);

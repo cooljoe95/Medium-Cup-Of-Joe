@@ -19,6 +19,8 @@ class Story < ActiveRecord::Base
   has_many :responses, class_name: "Story", foreign_key: "original_post_id"
   has_many :comments_to_responses, class_name: "Story", foreign_key: "response_id"
 
+  has_many :likes
+
   validates :body, :author, presence: true
   validates :body, length: { minimum: 1 }
 end
