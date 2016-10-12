@@ -11,9 +11,17 @@ class StoryIndex extends React.Component{
       return <StoryIndexItem key={story.id} story={story} />;
     };
 
+    const unfollowedAtEnd = [];
+
     const ableToAdd = (story) => {
-      return window.currentUser.following[(story.author.id)] !== undefined;
+      if(window.currentUser.following[(story.author.id)] !== undefined){
+        return true;
+      } else {
+        unfollowedAtEnd.push(story);
+        return false;
+      }
     };
+
 
     return (
       <div className="story-index">
@@ -30,6 +38,9 @@ class StoryIndex extends React.Component{
               } else {
                 storyItem = ableToAdd(story) ? originalStories(story) : null;
               }
+              return storyItem;
+            })}
+            {unfollowedAtEnd.map((story) => {
               return originalStories(story);
             })}
           </ul>

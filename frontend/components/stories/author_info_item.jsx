@@ -15,7 +15,7 @@ class AuthorInfoItem extends React.Component{
     debugger
     if(e.currentTarget.innerHTML === "Follow"){
       e.currentTarget.innerHTML = "Unfollow";
-      currentUser.following[followed_id] = {{followed_id}};
+      currentUser.following[followed_id] = {followed_id};
       $.ajax({
         method: "POST",
         url: "api/followers",
