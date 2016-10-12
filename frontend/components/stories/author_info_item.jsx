@@ -12,8 +12,10 @@ class AuthorInfoItem extends React.Component{
     // $.ajax({
     //   method:
     // });
+    debugger
     if(e.currentTarget.innerHTML === "Follow"){
       e.currentTarget.innerHTML = "Unfollow";
+      currentUser.following[followed_id] = {{followed_id}};
       $.ajax({
         method: "POST",
         url: "api/followers",
@@ -22,6 +24,8 @@ class AuthorInfoItem extends React.Component{
       });
     } else {
       e.currentTarget.innerHTML = "Follow";
+      const people = currentUser.following;
+      delete people[followed_id];
       $.ajax({
         method: "DELETE",
         url: "api/followers/0",

@@ -30,7 +30,7 @@ class StoryIndex extends React.Component{
               } else {
                 storyItem = ableToAdd(story) ? originalStories(story) : null;
               }
-              return storyItem;
+              return originalStories(story);
             })}
           </ul>
         </div>
