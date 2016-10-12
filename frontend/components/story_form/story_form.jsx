@@ -76,12 +76,19 @@ export default class StoryForm extends React.Component{
     return (
       <div className="new-story-container">
         <form className="new-story-form" onSubmit={this.createNewStory}>
-          <input type="text" placeholder="Title" style={{width: "100%", marginTop: "20px"}} value={this.state.title}
-                onChange={this.update("title")} />
+          {addAuthorIfLoggedIn()}
+          <input
+            type="text"
+            placeholder="Title"
+            style={{width: "100%", marginTop: "20px"}}
+            value={this.state.title}
+            onChange={this.update("title")}/>
           <MegadraftEditor
-              editorState={this.state.body}
-              onChange={this.onChange}/>
-          <div className="submit-button"><input type="submit" value="Publish"/></div>
+            editorState={this.state.body}
+            onChange={this.onChange}/>
+          <div className="submit-button">
+            <input type="submit" value="Publish"/>
+          </div>
         </form>
       </div>
     );
