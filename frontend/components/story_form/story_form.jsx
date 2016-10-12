@@ -22,6 +22,7 @@ export default class StoryForm extends React.Component{
   componentWillMount(){
     if(!window.currentUser){
       hashHistory.push("/login");
+      return;
     }
   }
 
@@ -65,11 +66,17 @@ export default class StoryForm extends React.Component{
   }
 
   render(){
+    const addAuthorIfLoggedIn = () => {
+      if(!window.currentUser){
+        return;
+      }
+      return <AuthorInfoItem author={window.currentUser} size="65"/>;
+    };
+
     return (
       <div className="new-story-container">
         <form className="new-story-form" onSubmit={this.createNewStory}>
-          <AuthorInfoItem author={window.currentUser} size="65"/>
-          <input type="text" placeholder="Title" style={{width: "100%", "margin-top": "20px"}} value={this.state.title}
+          <input type="text" placeholder="Title" style={{width: "100%", marginTop: "20px"}} value={this.state.title}
                 onChange={this.update("title")} />
           <MegadraftEditor
               editorState={this.state.body}

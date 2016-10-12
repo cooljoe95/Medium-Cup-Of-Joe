@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.destroy_all
 Story.destroy_all
+Follow.destroy_all
 
 users = User.create([
 	{
@@ -99,3 +100,22 @@ stories = Story.create([
     body: "<p> Frankenstein</p>"
   }
 ])
+
+follow = Follow.create([
+  {
+    follower_id: 1,
+    followed_id: 2
+  },
+  {
+    follower_id: 1,
+    followed_id: 3
+  },
+  {
+    follower_id: 1,
+    followed_id: 4
+  },
+  {
+    follower_id: 2,
+    followed_id: 3
+  }
+]);
