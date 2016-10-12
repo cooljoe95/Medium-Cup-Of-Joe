@@ -29,7 +29,7 @@ export default class StoryForm extends React.Component{
 
   componentDidMount(){
     autosize($('textarea'));
-    console.log(document.getElementsByClassName("write-new-story")[0].innerHTML = "");
+    document.getElementsByClassName("write-new-story")[0].innerHTML = "";
     // document.getElementsByClassName("write-new-story")[0].href = "#";
     // // const submitForm = <button onClick={this.createNewStory}>Publish</button>;
     // // console.log(document.getElementsByClassName("write-new-story")[0].outerHTML = submitForm);
@@ -42,20 +42,29 @@ export default class StoryForm extends React.Component{
   }
 
   update(property) {
+    return e => { return this.setState({[property]: e.currentTarget.value});};
+  }
 
-    return e => { return this.setState({[property]: e});};
+  empty(string){
+    const arrayOfParagraphs = string.replace(/(\r\n|\n|\r|&nbsp;)/gm,"").split("<p>");
+
+
+    for(let i = 0; i < arrayOfParagraphs.length; i++){
+      if (!["", "<br></p>", "</p>"].includes(arrayOfParagraphs[i])){
+        return false;
+      }
+    }
+    return true;
   }
 
   createNewStory(e){
     e.preventDefault();
     this.state.body = stateToHTML(this.state.body.getCurrentContent());
     const story = Object.assign({}, this.state);
-    console.log("hereris the story" + story.body);
     debugger
-    if(this.state.body === ""){ //Need to fix to correct for the change of body
-      return;
+    if(!this.empty(this.state.body)){
+      this.props.createStory({story});
     }
-    const returnedStory = this.props.createStory({story});
   }
 
   render(){

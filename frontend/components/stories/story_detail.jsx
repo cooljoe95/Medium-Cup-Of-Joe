@@ -7,12 +7,6 @@ const StoryDetail = ({story}) => {
   story.responses = story.responses || {};
   const comments = Object.keys(story.responses);
 
-  // const html = stateToHTML(editorStateFromRaw(story.body).getCurrentContent());
-  debugger
-  // const blah = editorStateFromRaw(story.body);
-  console.log("break");
-  console.log("break");
-
 	return (
     <div className="story-detail">
       <AuthorInfoItem author={story.author || {}}/>
