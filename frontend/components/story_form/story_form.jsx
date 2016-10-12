@@ -15,6 +15,7 @@ export default class StoryForm extends React.Component{
       author: window.currentUser
     };
     this.onChange = this.onChange.bind(this);
+    this.empty = this.empty.bind(this);
   }
 
   componentWillMount(){
@@ -51,6 +52,8 @@ export default class StoryForm extends React.Component{
 
     for(let i = 0; i < arrayOfParagraphs.length; i++){
       if (!["", "<br></p>", "</p>"].includes(arrayOfParagraphs[i])){
+        debugger
+        this.state.body = string.split("\n").slice(i - 1).join("\n");
         return false;
       }
     }
@@ -60,9 +63,9 @@ export default class StoryForm extends React.Component{
   createNewStory(e){
     e.preventDefault();
     this.state.body = stateToHTML(this.state.body.getCurrentContent());
-    const story = Object.assign({}, this.state);
     debugger
     if(!this.empty(this.state.body)){
+      const story = Object.assign({}, this.state);
       this.props.createStory({story});
     }
   }
