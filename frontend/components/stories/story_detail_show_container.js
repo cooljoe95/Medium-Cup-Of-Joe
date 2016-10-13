@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
   const story = selectStory(state.stories, storyId);
   return {
     storyId,
-    story
+    story,
+    session: state.session
   };
 };
 

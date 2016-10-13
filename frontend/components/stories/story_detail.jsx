@@ -15,7 +15,7 @@ const StoryDetail = ({story}) => {
   			<span className="body" dangerouslySetInnerHTML={{__html: story.body}}></span>
   		</div>
       <div className="comment-container">
-        <StoryFormContainer className="new-short-story" smallForm="true" originalPost={story}/>
+        {window.currentUser ? <StoryFormContainer className="new-short-story" smallForm="true" originalPost={story}/> : ""}
         <ul className="comments">
           {comments.map((key) => { return (
             <li className="comment" key={`comment-${key}`}>
