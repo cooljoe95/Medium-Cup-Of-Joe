@@ -5,11 +5,11 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
-- [ ] Stories
+- [x] Stories
 - [ ] Commenting on stories
-- [ ] Allow users to follow writers and getting a feed
-- [ ] Allow users to like articles
-- [ ] Rich Text Editing
+- [x] Allow users to follow writers and getting a feed
+- [x] Allow users to like articles
+- [x] Rich Text Editing
 - [ ] Infinite Scroll
 - [ ] Production README sample
 
@@ -50,11 +50,11 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 - [x] **`Story`** model
 - [x] Seed database with a small amount of test data
 - [ ] CRUD API for stories (**`StoryController`**)
-- [ ] JBuilder views for stories
+- [x] JBuilder views for stories
   * Story components and respective Redux loops
     - [x] **`StoryIndex`** (List of the stories)
-    - [ ] **`StoryIndexItem`** (Individual story)
-    - [ ] **`StoryForm`** (Create a new story)
+    - [x] **`StoryIndexItem`** (Individual story)
+    - [x] **`StoryForm`** (Create a new story)
 - [ ] Autosave stories feature
 - [ ] Style story components
 - [x] Seed stories
@@ -70,19 +70,19 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 
 ### Phase 4: Follow Users and Like Articles (1 Day)
 **Objective**: Follow and like stories and have them display
-- [ ] Create **`Follow`** model
-- [ ] Create **`Like`** model
-- [ ] Seed followers
-- [ ] Seed Likes between users and articles/comments
+- [x] Create **`Follow`** model
+- [x] Create **`Like`** model
+- [x] Seed followers
+- [x] Seed Likes between users and articles/comments
 - [ ] Style and prettify the liking and following
 
 
 ### Phase 5: Rich Text Editing (1 Days)
 **Objective**: Allow the user to style their own work
-- [ ] Integrate react-quill (based on Quill.js).
-- [ ] Rails helpers to sanitize HTML before rendering.
-- [ ] Style Quill components.
-- [ ] Add Quill styling to seeded stories
+- [x] Integrate react-quill (based on Quill.js).
+- [x] Rails helpers to sanitize HTML before rendering.
+- [x] Style Quill components.
+- [x] Add Quill styling to seeded stories
 
 ### Phase 6: Infinite Scrolling (1 Day)
 **Objective**: Add infinite scroll to StoryIndex
