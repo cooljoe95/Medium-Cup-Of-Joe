@@ -12,7 +12,6 @@ class AuthorInfoItem extends React.Component{
     // $.ajax({
     //   method:
     // });
-    debugger
     if(e.currentTarget.innerHTML === "Follow"){
       e.currentTarget.innerHTML = "Unfollow";
       currentUser.following[followed_id] = {followed_id};
@@ -45,7 +44,7 @@ class AuthorInfoItem extends React.Component{
       }
       return <button onClick={this.handleClick}>{window.currentUser.following[this.props.author.id] === undefined ? "Follow" : "Unfollow"}</button>;
     };
-    
+
     return (
       <div className="individual-author">
         <img style={{ cursor: "pointer" }} src={window.twitterAssets.secondImage} height={this.props.size} width={this.props.size}/>

@@ -22,7 +22,6 @@ class StoryIndexItem extends React.Component{
     //   method:
     // });
     console.log(this.props.story);
-    debugger
     if(e.currentTarget.innerHTML === "Not Yet Liked"){
       e.currentTarget.innerHTML = "Liked";
       this.story.likers[like_id] = {like: true};
