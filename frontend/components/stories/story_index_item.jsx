@@ -5,13 +5,12 @@ import { hashHistory } from 'react-router';
 class StoryIndexItem extends React.Component{
   constructor(props){
     super(props);
-    this.story = props.story;
     this.handleClick = this.handleClick.bind(this);
     this.handleLike = this.handleLike.bind(this);
   }
 
   handleClick() {
-    const storyId = this.story.id;
+    const storyId = this.props.story.id;
     hashHistory.push( "stories/" + storyId);
   }
 
@@ -21,12 +20,14 @@ class StoryIndexItem extends React.Component{
     // $.ajax({
     //   method:
     // });
-    const numLikes = document.getElementsByClassName(`num-likes-${this.story.id}`)[0];
-    if(this.story.likers[window.currentUser.id] === undefined){
+    const numLikes = document.getElementsByClassName(`num-likes-${story_id}`)[0];
+
+
+    if(this.props.story.likers[window.currentUser.id] === undefined){
       e.currentTarget.innerHTML = "Liked";
       const resultLink = parseInt(numLikes.innerHTML) + 1;
       numLikes.innerHTML = resultLink;
-      this.story.likers[like_id] = {like: true};
+      this.props.story.likers[like_id] = {like: true};
       $.ajax({
         method: "POST",
         url: "api/likes",
@@ -51,29 +52,29 @@ class StoryIndexItem extends React.Component{
 
 
   render(){
-    let firstParagraph = this.story.body.split(/\n/)[0];
+    let firstParagraph = this.props.story.body.split(/\n/)[0];
     if(firstParagraph.split("<p>")[0] === ""){
       firstParagraph = firstParagraph.slice(3, firstParagraph.length-4);
     }
     firstParagraph = firstParagraph.concat("...");
 
     const buttonText = () => {
-      if (!window.currentUser || this.story.author.id === window.currentUser.id){
+      if (!window.currentUser || this.props.story.author.id === window.currentUser.id){
         return;
       }
-      if(this.story.likers === undefined){
-        this.story.likers = {};
+      if(this.props.story.likers === undefined){
+        this.props.story.likers = {};
       }
-      return <button onClick={this.handleLike}>{this.story.likers[window.currentUser.id] === undefined ? "Not Yet Liked" : "Liked"}</button>;
+      return <button onClick={this.handleLike}>{this.props.story.likers[window.currentUser.id] === undefined ? "Not Yet Liked" : "Liked"}</button>;
     };
     return (
       <div className="individual-story">
-        <AuthorInfoItem author={this.story.author} key={`author-of-${this.story.id}`} size="40" />
+        <AuthorInfoItem author={this.props.story.author} key={`author-of-${this.props.story.id}`} size="40" />
         <li className="original-story-index-view" style={{ cursor: "pointer" }} onClick={this.handleClick} >
-          <h1>{this.story.title}</h1>
+          <h1>{this.props.story.title}</h1>
           <p dangerouslySetInnerHTML={{__html: firstParagraph}}></p>
         </li>
-        {buttonText()}<span className={`num-likes-${this.story.id}`}>{this.story.likers ? Object.keys(this.story.likers).length : 0}</span>
+        {buttonText()}<span className={`num-likes-${this.props.story.id}`}>{this.props.story.likers ? Object.keys(this.props.story.likers).length : 0}</span>
         Num Comments
       </div>
     );
