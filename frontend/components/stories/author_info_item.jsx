@@ -10,9 +10,9 @@ class AuthorInfoItem extends React.Component{
     const follower_id = window.currentUser.id;
     const followed_id = this.props.author.id;
 
-    const articles = document.getElementsByClassName(`author-${this.props.author.id}`);
+    const articles = document.getElementsByClassName(`author-${followed_id}`);
 
-    if(window.currentUser.following[this.props.author.id] === undefined){
+    if(window.currentUser.following[followed_id] === undefined){
       for(let i = 0; i < articles.length; i++){
         articles[i].innerHTML = "Unfollow";
       }
@@ -51,7 +51,7 @@ class AuthorInfoItem extends React.Component{
 
     return (
       <div className="individual-author">
-        <img style={{ cursor: "pointer" }} src={window.twitterAssets.secondImage} height={this.props.size} width={this.props.size}/>
+        <img src={window.twitterAssets.secondImage} height={this.props.size} width={this.props.size}/>
         <span className="author-info" style={{ cursor: "pointer" }}>
           {this.props.author.username}
           {buttonText()}

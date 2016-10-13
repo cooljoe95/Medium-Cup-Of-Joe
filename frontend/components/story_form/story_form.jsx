@@ -1,6 +1,6 @@
 import React from "react";
 import autosize from 'autosize';
-import { hashHistory } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 import {MegadraftEditor, editorStateFromRaw, editorStateToJSON} from "megadraft";
 import { stateToHTML } from 'draft-js-export-html';
 import AuthorInfoItem from '../stories/author_info_item';
@@ -32,7 +32,9 @@ export default class StoryForm extends React.Component{
 
   componentDidMount(){
     autosize($('textarea'));
-    document.getElementsByClassName("write-new-story")[0].innerHTML = "";
+    if(document.getElementsByClassName("tryout").length !== 0){
+      document.getElementsByClassName("write-new-story")[0].innerHTML = "";
+    }
   }
 
   componentWillUnmount(){
@@ -61,6 +63,12 @@ export default class StoryForm extends React.Component{
     this.state.body = stateToHTML(this.state.body.getCurrentContent());
     if(!this.empty(this.state.body)){
       const story = Object.assign({}, this.state);
+      if (this.props.originalPost){
+        story.original_post_id = this.props.originalPost.id;
+        this.setState({body: editorStateFromRaw(null)});
+        debugger
+        $(".comments").append("<li class=comment>" + "<span class='title'>" + story.title + "</span>" + "<span class='body'>" + story.body + "</span>");
+      }
       this.props.createStory({story});
     }
   }
@@ -73,22 +81,36 @@ export default class StoryForm extends React.Component{
       return <AuthorInfoItem author={window.currentUser} size="65"/>;
     };
 
+    const hide = () => {
+      if(this.props.smallForm){
+        return;
+      } else {
+        return (
+          <input
+            type="text"
+            placeholder="Title"
+            style={{width: "100%"}}
+            value={this.state.title}
+            onChange={this.update("title")}
+            className="tryout"
+          />
+        );
+      }
+    };
+
     return (
       <div className="new-story-container">
         <form className="new-story-form" onSubmit={this.createNewStory}>
           {addAuthorIfLoggedIn()}
-          <input
-            type="text"
-            placeholder="Title"
-            style={{width: "100%", marginTop: "20px"}}
-            value={this.state.title}
-            onChange={this.update("title")}/>
+          {hide()}
           <MegadraftEditor
             editorState={this.state.body}
-            onChange={this.onChange}/>
+            onChange={this.onChange}
+            placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tell your story..."/>
           <div className="submit-button">
             <input type="submit" value="Publish"/>
           </div>
+          {this.props.smallForm ? <Link to="/stories/new" className="link-to-full-screen">Go Full Screen</Link> : ""}
         </form>
       </div>
     );

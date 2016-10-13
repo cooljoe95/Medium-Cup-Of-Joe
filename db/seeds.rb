@@ -53,32 +53,27 @@ stories = Story.create([
     title: "One's first post",
     body: "<p>This is the first post made by user: 1</p>",
     author_id: 1,
-    response_id: nil
   },
   {
     title: "One's Second Post",
     body: "<p>This is the <em>second</em> post made by user: 1</p>",
     author_id: 1,
-    response_id: nil
   },
   {
     title: "Two's first Post",
     body: "<p>This is the first <strong>and</strong> only post made by user: 2</p>",
     author_id: 2,
-    response_id: nil
   },
   {
     title: "Three's response to One",
     body: "<p>I'm user three and <em>I'm</em> responding to One's second post</p>",
     author_id: 3,
-    response_id: 2,
     original_post_id: 2
   },
   {
     title: "Four's original first Post",
     body: "<p><strong>LOL</strong>, this works</p>",
     author_id: 4,
-    response_id: nil
   },
   {
     title: "Four also responds to other posters",
@@ -91,13 +86,11 @@ stories = Story.create([
     title: "Four will also respond to an original poster",
     body: "<p>I am responding to an original poster</p>",
     author_id: 4,
-    response_id: 3,
     original_post_id: 3
   },
   {
     title: "Frankenstein, or the Modern Prometheus",
     author_id: 7,
-    response_id: nil,
     body: "<p> Frankenstein</p>"
   }
 ])

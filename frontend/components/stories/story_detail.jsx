@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 import AuthorInfoItem from './author_info_item';
+import StoryFormContainer from '../story_form/story_form_container';
 
 
 const StoryDetail = ({story}) => {
   story.responses = story.responses || {};
   const comments = Object.keys(story.responses);
-
 	return (
     <div className="story-detail">
       <AuthorInfoItem author={story.author || {}} size="65" />
@@ -15,8 +15,16 @@ const StoryDetail = ({story}) => {
   			<span className="body" dangerouslySetInnerHTML={{__html: story.body}}></span>
   		</div>
       <div className="comment-container">
+        <StoryFormContainer className="new-short-story" smallForm="true" originalPost={story}/>
         <ul className="comments">
-          {comments.map((key) => { return <li className="comment" key={`comment-${key}`}>{story.responses[key].title}</li>;})}
+          {comments.map((key) => { return (
+            <li className="comment" key={`comment-${key}`}>
+              <span className='title'>
+                {story.responses[key].title}
+              </span>
+              <span className="body" dangerouslySetInnerHTML={{__html: story.responses[key].body}}/>
+            </li>
+          )})}
         </ul>
       </div>
     </div>

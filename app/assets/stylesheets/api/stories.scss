@@ -22,6 +22,12 @@
   color: rgb(129, 126, 133);
 }
 
+.stories-and-feed .sidemenu {
+  visibility: hidden;
+}
+
+
+
 .nav {
   float: right;
   padding-top: 17px;
@@ -64,8 +70,9 @@
 
 .original-stories-container {
   max-width: 660px;
+  margin-top: 40px;
+  padding-left: 0;
   margin: auto;
-  padding-top: 40px;
 }
 
 main {
@@ -98,6 +105,7 @@ body {
   height: auto;
   border: 1px solid rgb(232, 232, 232);
   border-radius: 4px;
+  padding-left: 10px;
 
 }
 
@@ -116,7 +124,6 @@ body {
 
 .original-story-index-view {
   margin-top: 10px;
-  margin-left: 20px;
   margin-right: 20px;
   list-style: none;
 }
@@ -130,6 +137,7 @@ body {
   font-size: 28px;
   font-weight: 700;
   padding-bottom: 10px;
+  // word-wrap: break-word;
   color: rgb(51, 51, 51);
 }
 
@@ -191,11 +199,21 @@ body {
   line-height: 2;
 }
 
+.new-story-form > input {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  margin-top: 10px;
+  word-wrap: break-word;
+  display: block;
+  text-align: center;
+}
 .title {
   font-family: sans-serif;
   font-weight: 700;
   font-size: 36px;
   margin-top: 10px;
+  word-wrap: break-word;
   display: block;
   text-align: center;
 }
@@ -224,7 +242,7 @@ body {
   max-width: 700px;
   margin: auto;
   position: relative;
-  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .submit-button {
@@ -279,4 +297,55 @@ body {
 
 input:focus, textarea:focus {
     outline: none;
+}
+
+.stories-and-feed .submit-button {
+  position: absolute;
+  top: 0;
+  bottom: 25px;
+  right: 0;
+  left: 40px;
+}
+
+.stories-and-feed .new-story-container {
+  max-width: 660px;
+  min-height: 200px;
+  margin: auto;
+}
+
+.stories-and-feed .submit-button input {
+  position: absolute;
+  bottom: 10px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  color: green;
+  background-color: white;
+  border: 1px solid yellow;
+}
+
+.stories-and-feed .new-story-form {
+  padding-bottom: 100px;
+  border: 1px solid red;
+  margin-bottom: 30px;
+}
+
+.stories-and-feed .public-DraftStyleDefault-block {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.stories-and-feed .paragraph {
+  margin-top: 0;
+  border: 1px solid blue;
+}
+
+.new-story-form .individual-author {
+  padding-bottom: 10px;
+}
+
+.individual-story .author-info {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  font-size: 20px;
 }

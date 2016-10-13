@@ -1,5 +1,6 @@
 import React from 'react';
 import StoryIndexItem from './story_index_item';
+import StoryFormContainer from '../story_form/story_form_container';
 
 class StoryIndex extends React.Component{
   componentDidMount() {
@@ -32,6 +33,7 @@ class StoryIndex extends React.Component{
           src={window.twitterAssets.secondImage}
           className="home-splash"></img>
         <div className="stories-and-feed">
+          {window.currentUser ? <StoryFormContainer className="new-short-story" smallForm="true"/> : ""}
           <ul className="original-stories-container">
             {Object.keys(this.props.stories).map((myKey) => {
               const story = this.props.stories[myKey];

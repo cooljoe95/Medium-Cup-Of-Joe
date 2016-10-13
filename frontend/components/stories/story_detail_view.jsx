@@ -15,7 +15,6 @@ export default class StoryShow extends React.Component{
 
 	render(){
     const story = this.props.story;
-
 		return(
       <div className="single-story-show">
          <div>
