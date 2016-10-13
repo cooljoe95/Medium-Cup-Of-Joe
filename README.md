@@ -7,8 +7,8 @@ MediumCupOfJoe is a web application inspired by Medium built using Ruby on Rails
 - [x] New account creation, login, and guest/demo login
 - [x] Stories
 - [ ] Commenting on stories
-- [ ] Allow users to follow writers and getting a feed
-- [ ] Allow users to like articles 
+- [x] Allow users to follow writers and getting a feed
+- [x] Allow users to like articles 
 - [x] Rich Text Editing
 - [ ] Infinite Scroll
 - [ ] Production README sample
