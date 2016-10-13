@@ -26,7 +26,6 @@ class StoryIndexItem extends React.Component{
       e.currentTarget.innerHTML = "Liked";
       const resultLink = parseInt(numLikes.innerHTML) + 1;
       numLikes.innerHTML = resultLink;
-      debugger
       this.story.likers[like_id] = {like: true};
       $.ajax({
         method: "POST",

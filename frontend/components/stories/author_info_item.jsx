@@ -9,11 +9,13 @@ class AuthorInfoItem extends React.Component{
   handleClick(e) {
     const follower_id = window.currentUser.id;
     const followed_id = this.props.author.id;
-    // $.ajax({
-    //   method:
-    // });
-    if(e.currentTarget.innerHTML === "Follow"){
-      e.currentTarget.innerHTML = "Unfollow";
+
+    const articles = document.getElementsByClassName(`author-${this.props.author.id}`);
+
+    if(window.currentUser.following[this.props.author.id] === undefined){
+      for(let i = 0; i < articles.length; i++){
+        articles[i].innerHTML = "Unfollow";
+      }
       currentUser.following[followed_id] = {followed_id};
       $.ajax({
         method: "POST",
@@ -22,7 +24,9 @@ class AuthorInfoItem extends React.Component{
         data: {follow_relationship: {follower: follower_id, following: followed_id}}
       });
     } else {
-      e.currentTarget.innerHTML = "Follow";
+      for(let i = 0; i < articles.length; i++){
+        articles[i].innerHTML = "Follow";
+      }
       const people = currentUser.following;
       delete people[followed_id];
       $.ajax({
@@ -42,7 +46,7 @@ class AuthorInfoItem extends React.Component{
       if(window.currentUser.following === undefined){
         window.currentUser.following = {};
       }
-      return <button onClick={this.handleClick}>{window.currentUser.following[this.props.author.id] === undefined ? "Follow" : "Unfollow"}</button>;
+      return <button className={`author-${this.props.author.id}`} onClick={this.handleClick}>{window.currentUser.following[this.props.author.id] === undefined ? "Follow" : "Unfollow"}</button>;
     };
 
     return (
