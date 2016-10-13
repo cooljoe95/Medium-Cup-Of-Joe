@@ -21,9 +21,12 @@ class StoryIndexItem extends React.Component{
     // $.ajax({
     //   method:
     // });
-    console.log(this.props.story);
-    if(e.currentTarget.innerHTML === "Not Yet Liked"){
+    const numLikes = document.getElementsByClassName(`num-likes-${this.story.id}`)[0];
+    if(this.story.likers[window.currentUser.id] === undefined){
       e.currentTarget.innerHTML = "Liked";
+      const resultLink = parseInt(numLikes.innerHTML) + 1;
+      numLikes.innerHTML = resultLink;
+      debugger
       this.story.likers[like_id] = {like: true};
       $.ajax({
         method: "POST",
@@ -33,6 +36,8 @@ class StoryIndexItem extends React.Component{
       });
     } else {
       e.currentTarget.innerHTML = "Not Yet Liked";
+      const resultLink = parseInt(numLikes.innerHTML) - 1;
+      numLikes.innerHTML = resultLink;
       const people = this.props.story.likers;
       delete people[like_id];
       $.ajax({
@@ -54,7 +59,6 @@ class StoryIndexItem extends React.Component{
     firstParagraph = firstParagraph.concat("...");
 
     const buttonText = () => {
-      console.log(this.story);
       if (!window.currentUser || this.story.author.id === window.currentUser.id){
         return;
       }
@@ -63,7 +67,6 @@ class StoryIndexItem extends React.Component{
       }
       return <button onClick={this.handleLike}>{this.story.likers[window.currentUser.id] === undefined ? "Not Yet Liked" : "Liked"}</button>;
     };
-
     return (
       <div className="individual-story">
         <AuthorInfoItem author={this.story.author} key={`author-of-${this.story.id}`} size="40" />
@@ -71,7 +74,7 @@ class StoryIndexItem extends React.Component{
           <h1>{this.story.title}</h1>
           <p dangerouslySetInnerHTML={{__html: firstParagraph}}></p>
         </li>
-        {buttonText()}{this.story.likers ? this.story.likers.length : 0}
+        {buttonText()}<span className={`num-likes-${this.story.id}`}>{this.story.likers ? Object.keys(this.story.likers).length : 0}</span>
         Num Comments
       </div>
     );

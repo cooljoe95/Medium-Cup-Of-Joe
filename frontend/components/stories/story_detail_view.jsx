@@ -18,7 +18,7 @@ export default class StoryShow extends React.Component{
 
 		return(
       <div className="single-story-show">
-         <div >
+         <div>
            <StoryDetail story={story} />
          </div>
       </div>
