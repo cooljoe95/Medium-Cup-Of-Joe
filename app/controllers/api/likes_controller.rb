@@ -3,17 +3,17 @@ class Api::LikesController < ApplicationController
   def create
     debugger
     Like.create!(
-      follower_id: params[:follow_relationship][:follower],
-      followed_id: params[:follow_relationship][:following]
+      author_id: params[:like_relationship][:author_id],
+      story_id: params[:like_relationship][:story_id]
     )
     render :nothing => true
   end
 
   def destroy
     debugger
-    follow_relationship = Follow.
-                              where(follower_id: params[:delete_me][:follower]).
-                              where(followed_id: params[:delete_me][:following]).
+    follow_relationship = Like.
+                              where(author_id: params[:delete_me][:author_id]).
+                              where(story_id: params[:delete_me][:story_id]).
                               first.
                               destroy
     render :nothing => true

@@ -40,9 +40,12 @@ class AuthorInfoItem extends React.Component{
       if (!window.currentUser || this.props.author.id === window.currentUser.id){
         return;
       }
+      if(window.currentUser.following === undefined){
+        window.currentUser.following = {};
+      }
       return <button onClick={this.handleClick}>{window.currentUser.following[this.props.author.id] === undefined ? "Follow" : "Unfollow"}</button>;
     };
-
+    
     return (
       <div className="individual-author">
         <img style={{ cursor: "pointer" }} src={window.twitterAssets.secondImage} height={this.props.size} width={this.props.size}/>

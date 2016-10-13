@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   has_many :followed_people, through: :followed_ids
   has_many :followers, through: :follower_ids
-  has_many :liked_stories, through: :liked_story_ids
+  has_many :liked_stories, through: :liked_story_ids, source: :story
 
   attr_reader :password
 

@@ -14,6 +14,9 @@ class StoryIndex extends React.Component{
     const unfollowedAtEnd = [];
 
     const ableToAdd = (story) => {
+      if(window.currentUser.following === undefined){
+        window.currentUser.following = {};
+      }
       if(window.currentUser.following[(story.author.id)] !== undefined){
         return true;
       } else {
