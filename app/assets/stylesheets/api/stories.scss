@@ -474,12 +474,18 @@ input:focus, textarea:focus {
 
 .comment-container .new-story-form input {
   position: absolute;
-  right: 150px;
-  bottom: 35px;
+  right: 350px;
+  bottom: -50px;
   padding: 11px 20px;
   border-radius: 20px;
   color: green;
   background-color: white;
+
+}
+
+.comment-container .new-story-form .link-to-full-screen {
+  position: absolute;
+
 
 }
 
