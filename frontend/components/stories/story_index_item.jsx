@@ -26,6 +26,8 @@ class StoryIndexItem extends React.Component{
     if(this.props.story.likers[window.currentUser.id] === undefined){
       e.currentTarget.innerHTML = "Liked";
       const resultLink = parseInt(numLikes.innerHTML) + 1;
+      e.currentTarget.style.color = "white";
+      e.currentTarget.style.backgroundColor = "rgb(2, 184, 117)";
       numLikes.innerHTML = resultLink;
       this.props.story.likers[like_id] = {like: true};
       $.ajax({
@@ -36,6 +38,10 @@ class StoryIndexItem extends React.Component{
       });
     } else {
       e.currentTarget.innerHTML = "Not Yet Liked";
+      e.currentTarget.style.backgroundColor = "white";
+      e.currentTarget.style.color = "rgb(2, 184, 117)";
+      e.currentTarget.style.border = "1px solid rgb(2, 184, 117)";
+
       const resultLink = parseInt(numLikes.innerHTML) - 1;
       numLikes.innerHTML = resultLink;
       const people = this.props.story.likers;
@@ -65,7 +71,7 @@ class StoryIndexItem extends React.Component{
       if(this.props.story.likers === undefined){
         this.props.story.likers = {};
       }
-      return <button onClick={this.handleLike}>{this.props.story.likers[window.currentUser.id] === undefined ? "Not Yet Liked" : "Liked"}</button>;
+      return <button onClick={this.handleLike} className="follow index-like" style={this.props.story.likers[window.currentUser.id] === undefined ? {backgroundColor: "white", color: "rgb(2, 184, 117)", border: "1px solid rgb(2, 184, 117)"} : {color: "white", backgroundColor: "rgb(2, 184, 117)"}}>{this.props.story.likers[window.currentUser.id] === undefined ? "Not Yet Liked" : "Liked"}</button>;
     };
     return (
       <div className="individual-story">
@@ -75,7 +81,6 @@ class StoryIndexItem extends React.Component{
           <p dangerouslySetInnerHTML={{__html: firstParagraph}}></p>
         </li>
         {buttonText()}<span className={`num-likes-${this.props.story.id}`}>{this.props.story.likers ? Object.keys(this.props.story.likers).length : 0}</span>
-        Num Comments
       </div>
     );
   }

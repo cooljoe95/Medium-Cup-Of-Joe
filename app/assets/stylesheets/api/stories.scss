@@ -12,7 +12,6 @@
 
 .logo-container > p {
   float: left;
-  background-color: blue;
 }
 
 .logo-container > a {
@@ -173,12 +172,12 @@ body {
   height: auto;
   border: 1px solid rgb(232, 232, 232);
   border-radius: 4px;
-  padding-left: 10px;
+  padding-left: 20px;
   margin-top: 30px;
 }
 
 .individual-author {
-  color: rgb(96, 202, 162);
+  color: rgb(10, 186, 121);
   margin-left: 20px;
   max-width: 275px;
   margin-top: 10px;
@@ -315,8 +314,8 @@ body {
 
 .submit-button {
   position: absolute;
-  top: -30px;
-  right: -140px;
+  top: -64px;
+  right: -35px;
 }
 
 .submit-button > input {
@@ -384,16 +383,25 @@ input:focus, textarea:focus {
 .stories-and-feed .submit-button input {
   position: absolute;
   bottom: 10px;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 20px;
   color: green;
   background-color: white;
-  border: 1px solid yellow;
+  color: rgb(0, 171, 107);
+  border: 1px solid rgb(10, 186, 121);
+}
+
+.stories-and-feed .submit-button input:hover {
+  color: rgb(28, 153, 99);
+  border: 1px solid rgb(0, 171, 107)
 }
 
 .stories-and-feed .new-story-form {
   padding-bottom: 100px;
   border: 1px solid rgb(232,232,232);
+  box-shadow: 0 0 0 1px rgb(247, 247, 247);
+  border-radius: 3px;
+  background-color: white;
   margin-bottom: 30px;
 }
 
@@ -404,7 +412,11 @@ input:focus, textarea:focus {
 
 .stories-and-feed .paragraph {
   margin-top: 0;
-  border: 1px solid blue;
+}
+
+.stories-and-feed .public-DraftStyleDefault-block {
+  font-family: serif;
+  color: rgb(136, 136, 136);
 }
 
 .new-story-form .individual-author {
@@ -429,4 +441,48 @@ input:focus, textarea:focus {
 
 .logo-container .individual-author .write-new-story {
   display: inline;
+}
+
+.link-to-full-screen {
+  position: absolute;
+  left: 150px;
+  bottom: 35px;
+  padding: 11px 20px;
+  border-radius: 20px;
+  color: green;
+  background-color: white;
+  color: rgb(168, 168, 168);
+  border: 1px solid rgb(217, 217, 217);
+}
+
+.link-to-full-screen:hover {
+  border: 1px solid rgb(143, 143, 143);
+  color: rgb(102, 102, 102);
+}
+
+.follow {
+  padding: 3px 15px;
+  border-radius: 15px;
+  border: 0;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.comment-container .new-story-form {
+  position: relative;
+}
+
+.comment-container .new-story-form input {
+  position: absolute;
+  right: 150px;
+  bottom: 35px;
+  padding: 11px 20px;
+  border-radius: 20px;
+  color: green;
+  background-color: white;
+
+}
+
+.index-like {
+  margin-right: 10px;
 }

@@ -66,7 +66,6 @@ export default class StoryForm extends React.Component{
       if (this.props.originalPost){
         story.original_post_id = this.props.originalPost.id;
         this.setState({body: editorStateFromRaw(null)});
-        debugger
         $(".comments").append("<li class=comment>" + "<span class='title'>" + story.title + "</span>" + "<span class='body'>" + story.body + "</span>");
       }
       this.props.createStory({story});
