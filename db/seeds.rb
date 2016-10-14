@@ -112,7 +112,7 @@ follow = Follow.create([
     follower_id: 2,
     followed_id: 3
   }
-]);
+])
 
 like = Like.create([
   {
@@ -135,4 +135,4 @@ like = Like.create([
     author_id: 2,
     story_id: 2
   }
-]);
+])

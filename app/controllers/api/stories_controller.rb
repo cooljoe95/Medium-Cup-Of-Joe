@@ -26,6 +26,7 @@ class Api::StoriesController < ApplicationController
   end
 
   def show
+    debugger
     @story = Story.where(id: params[:id]).first
     @responses = @story.responses.includes(:author).includes(:likes)
     @authors = @responses.map{ |story| story.author_id }
