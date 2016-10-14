@@ -78,7 +78,11 @@ export default class StoryForm extends React.Component{
       if(!window.currentUser){
         return;
       }
-      return <AuthorInfoItem author={window.currentUser} size="65"/>;
+      if(this.props.smallForm){
+        return <AuthorInfoItem author={window.currentUser} size="40"/>;
+      } else {
+        return <AuthorInfoItem author={window.currentUser} size="65"/>;
+      }
     };
 
     const hide = () => {

@@ -27,16 +27,25 @@ class StoryIndex extends React.Component{
       }
     };
 
+    const homeSplash = () => {
+      if(!window.currentUser){
+        return (
+          <div className="home-splash">
+            <span className="first-text">Move thinking forward.</span>
+            <span className="second-text">Medium is a community of readers and writers offering unique perspectives on ideas large and small.</span>
+            <span className="third-text">Sign up to read and interact with what matters most to you.</span>
+            <Link to="/signup" className="link-to-signup">Get Started</Link>
+          </div>
+        );
+      } else {
+        return "";
+      }
+    }
+
 
     return (
       <div className="story-index">
-        <div className="home-splash">
-          <span className="first-text">Move thinking forward.</span>
-          <span className="second-text">Medium is a community of readers and writers offering unique perspectives on ideas large and small.</span>
-          <span className="third-text">Sign up to read and interact with what matters most to you.</span>
-          <Link to="/signup" className="link-to-signup">Get Started</Link>
-        </div>
-
+        {homeSplash()}
         <div className="stories-and-feed">
           {window.currentUser ? <StoryFormContainer className="new-short-story" smallForm="true"/> : ""}
           <ul className="original-stories-container">
