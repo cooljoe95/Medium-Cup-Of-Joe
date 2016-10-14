@@ -12,13 +12,24 @@ export default class Greeting extends React.Component{
   render(){
     let welcomeMessage;
     const newStoryLink = <Link to={'/stories/new'} className="write-new-story">Write a Story</Link>;
+
+    const myFunction = () => {
+      document.getElementById("myDropdown").classList.toggle("show");
+    };
+
     if(this.props.currentUser){
       welcomeMessage = (
         <div className="nav individual-author">
           {newStoryLink}
-          <img src={window.twitterAssets.secondImage} height="40" width="40"/>
-          {this.props.currentUser.username}
-          <Link onClick={this.props.logout}>Logout</Link>
+          <div className="dropdown">
+            <button onClick={myFunction} className="dropbtn"><img src={window.mediumAssets.thirdImage} height="30" width="30"/></button>
+            <div id="myDropdown" className="dropdown-content">
+              <a>{this.props.currentUser.username}</a>
+              <Link onClick={this.props.logout} style={{cursor: "pointer"}}>Logout</Link>
+             </div>
+            <ul>
+            </ul>
+          </div>
         </div>
       );
     } else {

@@ -51,7 +51,7 @@ class AuthorInfoItem extends React.Component{
 
     return (
       <div className="individual-author">
-        <img src={window.twitterAssets.secondImage} height={this.props.size} width={this.props.size}/>
+        <img src={window.mediumAssets.thirdImage} height={this.props.size} width={this.props.size}/>
         <span className="author-info" style={{ cursor: "pointer" }}>
           {this.props.author.username}
           {buttonText()}

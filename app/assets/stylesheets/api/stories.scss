@@ -22,7 +22,7 @@
   color: rgb(129, 126, 133);
 }
 
-.stories-and-feed .sidemenu {
+.sidemenu {
   visibility: hidden;
 }
 
@@ -156,8 +156,10 @@ body {
   margin-bottom: 240px;
   margin-top: 60px;
   color: white;
-  padding: 20px;
+  padding: 15px 20px;
   background-color:rgb(227, 104, 214);
+  font-size: 14px;
+  font-weight: lighter;
   border-radius: 33px;
   // border-bottom-left-radius: 33px;
 }
@@ -332,7 +334,7 @@ body {
 }
 
 .nav > a:first-child {
-  display: block;
+  display:block;
   margin-bottom: 7px;
 }
 
@@ -414,4 +416,17 @@ input:focus, textarea:focus {
   top: 10px;
   left: 50px;
   font-size: 20px;
+}
+
+.logo-container .individual-author {
+  padding: 0;
+  margin-top: 25px;
+}
+
+.write-new-story {
+  margin-right: 10px;
+}
+
+.logo-container .individual-author .write-new-story {
+  display: inline;
 }
