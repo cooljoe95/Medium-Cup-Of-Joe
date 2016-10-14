@@ -1,6 +1,7 @@
 import React from 'react';
 import StoryIndexItem from './story_index_item';
 import StoryFormContainer from '../story_form/story_form_container';
+import { Link } from 'react-router';
 
 class StoryIndex extends React.Component{
   componentDidMount() {
@@ -29,9 +30,13 @@ class StoryIndex extends React.Component{
 
     return (
       <div className="story-index">
-        <img
-          src={window.twitterAssets.secondImage}
-          className="home-splash"></img>
+        <div className="home-splash">
+          <span className="first-text">Move thinking forward.</span>
+          <span className="second-text">Medium is a community of readers and writers offering unique perspectives on ideas large and small.</span>
+          <span className="third-text">Sign up to read and interact with what matters most to you.</span>
+          <Link to="/signup" className="link-to-signup">Get Started</Link>
+        </div>
+
         <div className="stories-and-feed">
           {window.currentUser ? <StoryFormContainer className="new-short-story" smallForm="true"/> : ""}
           <ul className="original-stories-container">

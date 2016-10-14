@@ -14,9 +14,9 @@ export default class Greeting extends React.Component{
     const newStoryLink = <Link to={'/stories/new'} className="write-new-story">Write a Story</Link>;
     if(this.props.currentUser){
       welcomeMessage = (
-        <div className="nav">
+        <div className="nav individual-author">
           {newStoryLink}
-          {this.props.currentUser.profile_pic_url}
+          <img src={window.twitterAssets.secondImage} height="40" width="40"/>
           {this.props.currentUser.username}
           <Link onClick={this.props.logout}>Logout</Link>
         </div>
