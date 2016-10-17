@@ -1,5 +1,7 @@
 # Medium Cup Of Joe
-Medium Cup of Joe is a web application inspired by Medium and build using Ruby on Rails, React, and Redux. This site features stories for users to post as well as opportunities to comment and style responses. [Link](https://medium-cup-of-joe.herokuapp.com/) to app.
+Medium Cup of Joe is a web application inspired by Medium and build using Ruby on Rails, React, and Redux. This site features stories for users to post as well as opportunities to comment and style responses.
+
+[Link](https://medium-cup-of-joe.herokuapp.com/) to app.
 
 ## Screenshots
 ### Homescreen
