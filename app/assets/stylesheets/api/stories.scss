@@ -226,6 +226,7 @@ body {
   color: rgb(74, 74, 74);
 }
 
+
 .story-show-container {
   min-height: 100vh;
   padding-top: 20px;
@@ -503,6 +504,10 @@ input:focus, textarea:focus {
   color: green;
   background-color: white;
 
+}
+
+.new-story-form img {
+  margin-left: 20px;
 }
 
 .comments {

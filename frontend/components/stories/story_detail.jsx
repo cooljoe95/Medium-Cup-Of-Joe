@@ -19,7 +19,7 @@ const StoryDetail = ({story}) => {
         <ul className="comments">
           {comments.map((key) => { return (
             <li className="comment" key={`comment-${key}`}>
-              <AuthorInfoItem author={story.responses[key] || {}} size="40" />
+              <AuthorInfoItem author={story.responses[key] ? story.responses[key].author : ""} size="40" />
               <span className='title'>
                 {story.responses[key].title}
               </span>

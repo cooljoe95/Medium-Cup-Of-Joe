@@ -48,7 +48,6 @@ export default class StoryForm extends React.Component{
   empty(string){
     const arrayOfParagraphs = string.replace(/(\r\n|\n|\r|&nbsp;)/gm,"").split("<p>");
 
-    debugger
     for(let i = 0; i < arrayOfParagraphs.length; i++){
       if (!["", "<br></p>", "</p>"].includes(arrayOfParagraphs[i])){
         if(i > 0){
@@ -69,8 +68,13 @@ export default class StoryForm extends React.Component{
       const story = Object.assign({}, this.state);
       if (this.props.originalPost){
         story.original_post_id = this.props.originalPost.id;
+        debugger
         this.setState({body: editorStateFromRaw(null)});
-        $(".comments").append("<li class=comment>" + "<span class='title'>" + story.title + "</span>" + "<span class='body'>" + story.body + "</span>");
+        let i = 0;
+        while (this.props.originalPost.responses[i] !== undefined) {
+          i += 20;
+        }
+        this.props.originalPost.responses[i] = story;
       }
       this.props.createStory({story});
     }
