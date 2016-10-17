@@ -192,6 +192,7 @@ body {
 .original-story-index-view {
   margin-top: 10px;
   margin-right: 20px;
+  margin-left: 20px;
   list-style: none;
 }
 
@@ -292,6 +293,10 @@ body {
   padding-bottom: 30px;
 }
 
+.comments > li {
+  list-style: none;
+}
+
 .comment {
   background-color: white;
   padding-top: 30px;
@@ -299,6 +304,7 @@ body {
   padding-bottom: 30px;
   margin-bottom: 30px;
   margin-top: 30px;
+
 }
 
 .body > * {
@@ -337,9 +343,23 @@ body {
   margin-bottom: 7px;
 }
 
+.comment-container .new-story-container {
+  min-height: 100px;
+}
+
+.comment-container .new-story-form {
+  background-color: white;
+  border: 1px solid rgb(240, 240, 240);
+  padding-bottom: 30px;
+}
+
 .new-story-container {
   border-top: 1px solid rgb(240, 240, 240);
   min-height: 100vh;
+}
+
+.comment-container .public-DraftStyleDefault-block > span {
+  padding-left: 30px;
 }
 
 .new-story-form > textarea{
@@ -469,26 +489,39 @@ input:focus, textarea:focus {
 }
 
 .comment-container .new-story-form {
+  max-width: 640px;
   position: relative;
 }
 
 .comment-container .new-story-form input {
   position: absolute;
-  right: 320px;
-  bottom: -110px;
+  right: 450px;
+  bottom: -114px;
   padding: 11px 20px;
+  border: 1px solid rgb(240, 240, 240);
   border-radius: 20px;
   color: green;
   background-color: white;
 
 }
 
+.comments {
+  padding-left: 0;
+}
+
+.comment {
+  padding: 0;
+}
+
 .comment-container .new-story-form .link-to-full-screen {
-  position: absolute;
-
-
+  display: none;
 }
 
 .index-like {
   margin-right: 10px;
+}
+
+.comment > * {
+  margin-left: 20px;
+  margin-right: 20px;
 }

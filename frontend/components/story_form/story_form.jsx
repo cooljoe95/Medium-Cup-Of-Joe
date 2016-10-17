@@ -48,10 +48,14 @@ export default class StoryForm extends React.Component{
   empty(string){
     const arrayOfParagraphs = string.replace(/(\r\n|\n|\r|&nbsp;)/gm,"").split("<p>");
 
-
+    debugger
     for(let i = 0; i < arrayOfParagraphs.length; i++){
       if (!["", "<br></p>", "</p>"].includes(arrayOfParagraphs[i])){
-        this.state.body = string.split("\n").slice(i - 1).join("\n");
+        if(i > 0){
+          this.state.body = string.split("\n").slice(i - 1).join("\n");
+        } else {
+          this.state.body = string;
+        }
         return false;
       }
     }

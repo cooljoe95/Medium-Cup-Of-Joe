@@ -48,19 +48,11 @@
    background-color: white;
  }
 
- blockquote, q {
- 	quotes: none;
- }
  html {
    height: 100%;
  }
  body {
    min-height: 100%;
- }
- blockquote:before, blockquote:after,
- q:before, q:after {
- 	content: '';
- 	content: none;
  }
  table {
  	border-collapse: collapse;
