@@ -68,7 +68,6 @@ export default class StoryForm extends React.Component{
       const story = Object.assign({}, this.state);
       if (this.props.originalPost){
         story.original_post_id = this.props.originalPost.id;
-        debugger
         this.setState({body: editorStateFromRaw(null)});
         let i = 0;
         while (this.props.originalPost.responses[i] !== undefined) {

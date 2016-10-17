@@ -80,7 +80,7 @@ class StoryIndexItem extends React.Component{
           <h1>{this.props.story.title}</h1>
           <p dangerouslySetInnerHTML={{__html: firstParagraph}}></p>
         </li>
-        {buttonText()}<span className={`num-likes-${this.props.story.id}`}>{this.props.story.likers ? Object.keys(this.props.story.likers).length : 0}</span>
+        {buttonText()}<span className={`num-likes-${this.props.story.id}`}>{this.props.story.likers ? Object.keys(this.props.story.likers).length : 0} </span>likes
       </div>
     );
   }
