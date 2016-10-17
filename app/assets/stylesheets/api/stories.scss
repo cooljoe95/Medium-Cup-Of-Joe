@@ -524,9 +524,26 @@ input:focus, textarea:focus {
 .comment-container .new-story-form .link-to-full-screen {
   display: none;
 }
+.comment-container .new-story-form .individual-author  > span {
+  margin-left: 10px;
+  padding-left: 0;
+}
+
+.comment-container .new-story-form .individual-author {
+  margin-left: 20px;
+  padding-left: 0;
+}
 
 .index-like {
   margin-right: 10px;
+}
+
+.comment-container .individual-author {
+  margin-left: 40px;
+}
+
+.comment .body {
+  margin-left: 20px;
 }
 
 .comment > * {
