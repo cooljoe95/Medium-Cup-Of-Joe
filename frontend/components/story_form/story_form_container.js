@@ -4,7 +4,8 @@ import { createStory } from '../../actions/story_actions';
 
 const mapStateToProps = (state) => (
   {
-    story: state.story
+    story: state.story,
+    session: state.session
   }
 );
 

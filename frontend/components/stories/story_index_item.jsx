@@ -3,7 +3,7 @@ import AuthorInfoItem from './author_info_item';
 import { hashHistory } from 'react-router';
 
 class StoryIndexItem extends React.Component{
-  constructor(props){
+  constructor (props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.handleLike = this.handleLike.bind(this);
@@ -22,13 +22,12 @@ class StoryIndexItem extends React.Component{
     // });
     const numLikes = document.getElementsByClassName(`num-likes-${story_id}`)[0];
 
-
     if(this.props.story.likers[window.currentUser.id] === undefined){
       e.currentTarget.innerHTML = "Liked";
-      const resultLink = parseInt(numLikes.innerHTML) + 1;
+      const resultLink = Object.keys(this.props.story.likers).length + 1;
       e.currentTarget.style.color = "white";
       e.currentTarget.style.backgroundColor = "rgb(2, 184, 117)";
-      numLikes.innerHTML = resultLink;
+      numLikes.innerHTML = resultLink + "  ";
       this.props.story.likers[like_id] = {like: true};
       $.ajax({
         method: "POST",
@@ -42,8 +41,8 @@ class StoryIndexItem extends React.Component{
       e.currentTarget.style.color = "rgb(2, 184, 117)";
       e.currentTarget.style.border = "1px solid rgb(2, 184, 117)";
 
-      const resultLink = parseInt(numLikes.innerHTML) - 1;
-      numLikes.innerHTML = resultLink;
+      const resultLink = Object.keys(this.props.story.likers).length - 1;
+      numLikes.innerHTML = resultLink + "  ";
       const people = this.props.story.likers;
       delete people[like_id];
       $.ajax({
@@ -54,8 +53,6 @@ class StoryIndexItem extends React.Component{
       });
     }
   }
-
-
 
   render(){
     let firstParagraph = this.props.story.body.split(/\n/)[0];

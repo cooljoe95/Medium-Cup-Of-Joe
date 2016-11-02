@@ -18,7 +18,7 @@ class AuthorInfoItem extends React.Component{
         articles[i].style.color = "white";
         articles[i].style.backgroundColor = "rgb(2, 184, 117)";
       }
-      currentUser.following[followed_id] = {followed_id};
+      window.currentUser.following[followed_id] = {followed_id};
       $.ajax({
         method: "POST",
         url: "api/followers",
@@ -32,7 +32,7 @@ class AuthorInfoItem extends React.Component{
         articles[i].style.backgroundColor = "white";
         articles[i].style.border = "1px solid rgb(2, 184, 117)";
       }
-      const people = currentUser.following;
+      const people = window.currentUser.following;
       delete people[followed_id];
       $.ajax({
         method: "DELETE",
@@ -53,10 +53,9 @@ class AuthorInfoItem extends React.Component{
       }
       return <button className={`author-${this.props.author.id} follow`} style={window.currentUser.following[this.props.author.id] === undefined ? {backgroundColor: "white", color: "rgb(2, 184, 117)", border: "1px solid rgb(2, 184, 117)"} : {color: "white", backgroundColor: "rgb(2, 184, 117)"}} onClick={this.handleClick}>{window.currentUser.following[this.props.author.id] === undefined ? "Follow" : "Following"}</button>;
     };
-
     return (
       <div className="individual-author">
-        <img src={window.mediumAssets.thirdImage} height={this.props.size} width={this.props.size}/>
+        <img src={(this.props.author && this.props.author.profile_pic_url) ? this.props.author.profile_pic_url : window.mediumAssets.thirdImage} height={this.props.size} width={this.props.size}/>
         <span className="author-info" style={{ cursor: "pointer" }}>
           {this.props.author.username}
           {buttonText()}

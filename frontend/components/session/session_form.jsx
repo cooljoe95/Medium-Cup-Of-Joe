@@ -32,16 +32,21 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
     const handleSubmit = (e) => {
       e.preventDefault();
       const user = this.state;
       this.props.processForm({user});
     };
 
+    const handleGuest = (e) => {
+      e.preventDefault();
+      this.props.guestLogin();
+    };
+
     let link;
     let email;
     let head;
+
     if(this.props.formType === "login"){
       link = <Link to='/signup'>Sign up instead?</Link>;
       head = <div>Enter your username and password to log in</div>;
@@ -68,12 +73,15 @@ class SessionForm extends React.Component {
             {email}
             <container className="submit-container">
               <a>
+                <input type="button" onClick={handleGuest} className="form-element" value="Guest Login"/>
+              </a>
+              <a>
                 <input type="submit" className="form-element"/>
               </a>
             </container>
           </form>
           <ul>
-            {this.props.errors.map( (error, idx) => {return <li key={`error-${idx}`}>{error}</li>;})}
+            {this.props.errors.map((error, idx) => { return <li key={`error-${idx}`}>{error}</li>; })}
           </ul>
         </div>
       </div>

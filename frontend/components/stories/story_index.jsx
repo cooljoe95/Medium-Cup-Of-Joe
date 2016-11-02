@@ -40,8 +40,7 @@ class StoryIndex extends React.Component{
       } else {
         return "";
       }
-    }
-
+    };
 
     return (
       <div className="story-index">

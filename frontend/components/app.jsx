@@ -1,6 +1,6 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 const App = ({ children }) => (
   <div className="what-is-this-class">
     <div className="logo-container group">

@@ -26,6 +26,13 @@ export default class StoryForm extends React.Component{
     }
   }
 
+  componentDidUpdate(){
+    if(!window.currentUser){
+      hashHistory.push("/");
+      return;
+    }
+  }
+
   onChange(editorState) {
     this.setState({body: editorState});
   }
@@ -46,7 +53,7 @@ export default class StoryForm extends React.Component{
   }
 
   empty(string){
-    const arrayOfParagraphs = string.replace(/(\r\n|\n|\r|&nbsp;)/gm,"").split("<p>");
+    const arrayOfParagraphs = string.replace(/(\r\n|\n|\r|&nbsp;)/gm, "").split("<p>");
 
     for(let i = 0; i < arrayOfParagraphs.length; i++){
       if (!["", "<br></p>", "</p>"].includes(arrayOfParagraphs[i])){
@@ -66,6 +73,8 @@ export default class StoryForm extends React.Component{
     this.state.body = stateToHTML(this.state.body.getCurrentContent());
     if(!this.empty(this.state.body)){
       const story = Object.assign({}, this.state);
+      delete story.author;
+      story.author = Object.assign({}, this.state.author);
       if (this.props.originalPost){
         story.original_post_id = this.props.originalPost.id;
         this.setState({body: editorStateFromRaw(null)});
@@ -80,6 +89,7 @@ export default class StoryForm extends React.Component{
   }
 
   render(){
+
     const addAuthorIfLoggedIn = () => {
       if(!window.currentUser){
         return;
