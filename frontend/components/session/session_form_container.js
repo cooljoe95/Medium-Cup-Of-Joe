@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const processForm = (formType === "login") ? login : signup;
   const defaultUser = {
     user: {
-      username: "1",
+      username: "can_this_name_BE_any_longer",
       password: "password"
     }
   };

@@ -696,3 +696,26 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+
+.comment .body img {
+  max-height: 600px;
+  max-width: 550px;
+  display: block;
+  margin: auto;
+
+}
+
+.original-story-index-view img {
+  max-height: 600px;
+  max-width: 550px;
+  display: block;
+  margin: auto;
+}
+
+.story-show-container img {
+  max-height: 600px;
+  max-width: 550px;
+  display: block;
+  margin: auto;
+}

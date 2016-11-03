@@ -118,6 +118,16 @@ export default class StoryForm extends React.Component{
       }
     };
 
+    const newButton = () => {
+      if (this.props.originalPost) {
+        return <input type="submit" value="Publish" className="new-comment-publish"/>
+      } else {
+        return (<div className="submit-button">
+          <input type="submit" value="Publish"/>
+        </div>);
+      }
+    };
+
     return (
       <div className="new-story-container">
         <form className="new-story-form" onSubmit={this.createNewStory}>
@@ -127,9 +137,7 @@ export default class StoryForm extends React.Component{
             editorState={this.state.body}
             onChange={this.onChange}
             placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tell your story..."/>
-          <div className="submit-button">
-            <input type="submit" value="Publish"/>
-          </div>
+          {newButton()}
           {this.props.smallForm ? <Link to="/stories/new" className="link-to-full-screen">Go Full Screen</Link> : ""}
         </form>
       </div>

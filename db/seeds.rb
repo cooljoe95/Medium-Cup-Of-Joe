@@ -12,47 +12,53 @@ Like.destroy_all
 
 users = User.create([
 	{
-		username: "1",
+		username: "can_this_name_BE_any_longer",
 		password: "password",
-		email: "num1@co.com",
-		profile_pic_url: "https://plusquotes.com/images/quotes-img/cool-pictures-24.jpg"
+		email: "chandler@co.com",
+		profile_pic_url: "https://upload.wikimedia.org/wikipedia/en/6/6c/Matthew_Perry_as_Chandler_Bing.jpg"
 	},
 	{
-		username: "2",
+		username: "smelly_cat",
 		password: "password",
-		email: "num2@co.com"
+		email: "phoebe@co.com",
+		profile_pic_url: "https://ilovefriends.files.wordpress.com/2009/12/lisa_kudrow_3001.jpg"
 	},
 	{
-		username: "3",
+		username: "geology_rocks",
 		password: "password",
-		email: "num3@co.com"
+		email: "ross3@co.com",
+		profile_pic_url: "http://vignette3.wikia.nocookie.net/friends/images/8/89/Square_Ross.jpg/revision/20111216200027"
 	},
 	{
-		username: "4",
+		username: "ILovePizza",
 		password: "password",
-		email: "num4@co.com"
+		email: "joey@co.com",
+		profile_pic_url: "http://www.uncleodiescollectibles.com/img_lib/Matt%20LeBlanc%20122%205-14-14.jpg"
 	},
 	{
-		username: "5",
+		username: "Werent_on_a_Break",
 		password: "password",
-		email: "num5@co.com"
+		email: "rachael@co.com",
+		profile_pic_url: "https://65.media.tumblr.com/27b72bcf4e3ab891219bafeed4f0cf1f/tumblr_inline_n6ifsuUn561safegj.jpg"
 	},
 	{
-		username: "6",
+		username: "secret-chef",
 		password: "password",
-		email: "num6@co.com"
+		email: "monica@co.com",
+		profile_pic_url: "http://4.bp.blogspot.com/-WCJfZteB4Ww/UCWi2_pvjaI/AAAAAAAAHjU/GkVGlZagCyE/s1600/Monica+Friends.jpg"
 	},
   {
-    username: "MaryShelley",
+    username: "NotGunther",
     password: "password",
-    email: "ms@ms.org"
+    email: "ms@ms.org",
+		profile_pic_url: "https://img.buzzfeed.com/buzzfeed-static/static/2015-09/16/7/enhanced/webdr06/grid-cell-996-1442402630-2.jpg"
   }
 ])
 
 stories = Story.create([
   {
     title: "One's first post",
-    body: "<p>This is the first post made by user: 1</p>",
+    body: "<p>This is the first post made by <img src='https://thumbs.dreamstime.com/z/pepperoni-pizza-thinly-sliced-popular-topping-american-style-pizzerias-30402134.jpg' /> user: 1</p>",
     author_id: 1,
   },
   {
@@ -78,7 +84,7 @@ stories = Story.create([
   },
   {
     title: "Four also responds to other posters",
-    body: "<p>I Guess I can respond to a response</p>",
+    body: "<p>I Guess I can respond <img src='https://thumbs.dreamstime.com/z/pepperoni-pizza-thinly-sliced-popular-topping-american-style-pizzerias-30402134.jpg' />to a response</p>",
     author_id: 4,
     response_id: 4,
     original_post_id: 2

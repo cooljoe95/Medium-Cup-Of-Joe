@@ -214,6 +214,7 @@ body {
   top: 10px;
   left: 80px;
   font-size: 20px;
+  min-width: 500px;
 }
 
 .original-story-index-view > p {
@@ -233,6 +234,7 @@ body {
 .story-show-container {
   min-height: 100vh;
   padding-top: 20px;
+  word-wrap: break-word;
   // padding-top: 40px;
 }
 
@@ -308,7 +310,7 @@ body {
   padding-bottom: 30px;
   margin-bottom: 30px;
   margin-top: 30px;
-
+  word-wrap: break-word;
 }
 
 .body > * {
@@ -499,14 +501,15 @@ input:focus, textarea:focus {
 
 .comment-container .new-story-form input {
   position: absolute;
-  right: 450px;
-  bottom: -114px;
+  right: 10px;
+  top: 0;
+  font-size: 16px;
   padding: 11px 20px;
   border: 1px solid rgb(240, 240, 240);
   border-radius: 20px;
   color: green;
   background-color: white;
-
+  cursor: pointer;
 }
 
 .new-story-form img {
