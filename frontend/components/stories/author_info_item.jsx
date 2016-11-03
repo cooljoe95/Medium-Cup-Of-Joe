@@ -56,7 +56,7 @@ class AuthorInfoItem extends React.Component{
     return (
       <div className="individual-author">
         <img src={(this.props.author && this.props.author.profile_pic_url) ? this.props.author.profile_pic_url : window.mediumAssets.thirdImage} height={this.props.size} width={this.props.size}/>
-        <span className="author-info" style={{ cursor: "pointer" }}>
+        <span className="author-info">
           {this.props.author.username}
           {buttonText()}
         </span>

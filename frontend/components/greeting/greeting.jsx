@@ -22,7 +22,7 @@ export default class Greeting extends React.Component{
         <div className="nav individual-author">
           {newStoryLink}
           <div className="dropdown">
-            <button onClick={myFunction} className="dropbtn"><img src={window.mediumAssets.thirdImage} height="30" width="30"/></button>
+            <button onClick={myFunction} className="dropbtn"><img src={(window.currentUser && window.currentUser.profile_pic_url) ? window.currentUser.profile_pic_url : window.mediumAssets.thirdImage} height="30" width="30" style={{'borderRadius': '50%'}}/></button>
             <div id="myDropdown" className="dropdown-content">
               <a>{this.props.currentUser.username}</a>
               <Link onClick={this.props.logout} style={{cursor: "pointer"}}>Logout</Link>

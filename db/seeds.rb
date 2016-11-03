@@ -15,7 +15,7 @@ users = User.create([
 		username: "1",
 		password: "password",
 		email: "num1@co.com",
-		profile_pic_url: "http://plusquotes.com/images/quotes-img/cool-pictures-24.jpg"
+		profile_pic_url: "https://plusquotes.com/images/quotes-img/cool-pictures-24.jpg"
 	},
 	{
 		username: "2",
