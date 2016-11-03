@@ -71,6 +71,7 @@ export default class StoryForm extends React.Component{
   createNewStory(e){
     e.preventDefault();
     this.state.body = stateToHTML(this.state.body.getCurrentContent());
+    debugger
     if(!this.empty(this.state.body)){
       const story = Object.assign({}, this.state);
       delete story.author;
