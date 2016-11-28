@@ -52,29 +52,36 @@ export default class StoryForm extends React.Component{
     return e => { return this.setState({[property]: e.currentTarget.value});};
   }
 
-  empty(string){
+  splitString(string){
     const arrayOfParagraphs = string.replace(/(\r\n|\n|\r|&nbsp;)/gm, "").split("<p>");
-
+    var final = string;
     for(let i = 0; i < arrayOfParagraphs.length; i++){
       if (!["", "<br></p>", "</p>"].includes(arrayOfParagraphs[i])){
         if(i > 0){
-          this.state.body = string.split("\n").slice(i - 1).join("\n");
+          return string.split("\n").slice(i - 1).join("\n");
         } else {
-          this.state.body = string;
+          return string;
         }
-        return false;
       }
     }
-    return true;
+    return '';
+  }
+
+  empty (string) {
+    const str = this.splitString(string);
+    if (str.length === 0) {
+      return true;
+    }
+    return false;
   }
 
   createNewStory(e){
     e.preventDefault();
-    this.state.body = stateToHTML(this.state.body.getCurrentContent());
-    debugger
-    if(!this.empty(this.state.body)){
-      const story = Object.assign({}, this.state);
-      delete story.author;
+    const body = stateToHTML(this.state.body.getCurrentContent());
+    if(!this.empty(body)) {
+      const story = {};
+      story.title = this.state.title;
+      story.body = this.splitString(body);
       story.author = Object.assign({}, this.state.author);
       if (this.props.originalPost){
         story.original_post_id = this.props.originalPost.id;
@@ -90,7 +97,6 @@ export default class StoryForm extends React.Component{
   }
 
   render(){
-
     const addAuthorIfLoggedIn = () => {
       if(!window.currentUser){
         return;
