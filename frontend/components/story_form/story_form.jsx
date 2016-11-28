@@ -90,6 +90,7 @@ export default class StoryForm extends React.Component{
         while (this.props.originalPost.responses[i] !== undefined) {
           i += 20;
         }
+        debugger
         this.props.originalPost.responses[i] = story;
       }
       this.props.createStory({story});
