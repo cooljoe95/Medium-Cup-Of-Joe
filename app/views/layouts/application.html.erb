@@ -5,12 +5,10 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel='shortcut icon' href="<%= image_url("favicon.ico") %>" type='image/x-icon'/ >
 
     <script type="text/javascript">
     window.mediumAssets = {
-      // image_url is a rails helper method that does the fingerprinting
-      // so we need erb tag to use ruby
-      // file name is an argument to the image_url method
       firstImage: "<%= image_url("medium-cup-of-joe-logo--1-.png") %>",
       secondImage: "<%= image_url("Medium_image.png") %>",
       thirdImage: "<%=  image_url("user-icon.png")%>",
